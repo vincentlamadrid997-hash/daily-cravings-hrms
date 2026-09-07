@@ -1,0 +1,3490 @@
+.employee-payroll-details-page{
+
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+
+}
+
+.employee-payroll-details-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+
+}
+
+.employee-payroll-details-title h1{
+
+    margin:0;
+    color:#003DA5;
+    font-size:32px;
+    font-weight:800;
+
+}
+
+.employee-payroll-details-title h1 i{
+
+    margin-right:12px;
+
+}
+
+.employee-payroll-details-title p{
+
+    margin-top:8px;
+    color:#78909C;
+    font-size:15px;
+
+}
+
+.employee-payroll-details-back-btn{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 22px;
+    border:none;
+    border-radius:14px;
+    background:#EBA000;
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.employee-payroll-details-back-btn:hover{
+
+    background:#D69200;
+    transform:translateY(-3px);
+
+}
+
+.employee-payroll-details-card{
+
+    background:#ffffff;
+    border:1px solid #E8EDF5;
+    border-radius:24px;
+    padding:35px;
+
+    box-shadow:
+    0 12px 35px rgba(0,0,0,.06);
+
+    transition:.3s;
+
+}
+
+.employee-payroll-details-card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.employee-payroll-details-card-header{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding-bottom:25px;
+    margin-bottom:30px;
+    border-bottom:1px solid #EDF1F7;
+
+}
+
+.employee-payroll-details-icon{
+
+    width:60px;
+    height:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:18px;
+    background:#E3F2FD;
+    color:#003DA5;
+    font-size:24px;
+
+}
+
+.employee-payroll-details-card-header h2{
+
+    margin:0;
+    font-size:22px;
+    color:#263238;
+    font-weight:800;
+
+}
+
+.employee-payroll-details-card-header p{
+
+    margin-top:6px;
+    color:#78909C;
+
+}
+
+.employee-payroll-details-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+
+}
+
+.employee-payroll-details-group{
+
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+
+}
+
+.employee-payroll-details-group label{
+
+    font-size:13px;
+    font-weight:700;
+    color:#607D8B;
+
+}
+
+.employee-payroll-details-group label i{
+
+    color:#003DA5;
+    margin-right:8px;
+
+}
+
+.employee-payroll-details-group p{
+
+    margin:0;
+    font-size:16px;
+    font-weight:700;
+    color:#263238;
+
+}
+
+.employee-payroll-details-summary{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+
+}
+
+.employee-payroll-summary-box{
+
+    background:#F8FAFC;
+    border:1px solid #EDF1F7;
+    padding:22px;
+    border-radius:18px;
+    transition:.3s;
+
+}
+
+.employee-payroll-summary-box:hover{
+
+    background:#F1F7FF;
+    transform:translateY(-3px);
+
+}
+
+.employee-payroll-summary-box span{
+
+    display:block;
+    color:#78909C;
+    font-size:13px;
+    font-weight:700;
+
+}
+
+.employee-payroll-summary-box h3{
+
+    margin:10px 0 0;
+    color:#003DA5;
+    font-size:25px;
+    font-weight:800;
+
+}
+
+.employee-net-highlight{
+
+    color:#2E7D32 !important;
+
+}
+
+.employee-payroll-status{
+
+    display:inline-flex;
+    align-items:center;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:800;
+
+}
+
+.employee-payroll-status.paid{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-payroll-status.generated{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-payroll-status.draft{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-payroll-details-actions{
+
+    display:flex;
+    justify-content:flex-end;
+    margin-top:35px;
+    padding-top:25px;
+    border-top:1px solid #EDF1F7;
+
+}
+
+.employee-payroll-details-btn{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 30px;
+    border:none;
+    border-radius:14px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.employee-payroll-details-btn.download{
+
+    background:#003DA5;
+    color:white;
+
+}
+
+.employee-payroll-details-btn.download:hover{
+
+    background:#002B75;
+    transform:translateY(-3px);
+
+}
+
+@media(max-width:1000px){
+
+    .employee-payroll-details-summary{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:800px){
+
+    .employee-payroll-details-header{
+
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+
+    }
+
+    .employee-payroll-details-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .employee-payroll-details-page{
+
+        padding:10px;
+
+    }
+
+    .employee-payroll-details-card{
+
+        padding:22px;
+        border-radius:18px;
+
+    }
+
+    .employee-payroll-details-title h1{
+
+        font-size:25px;
+
+    }
+
+    .employee-payroll-details-actions{
+
+        justify-content:center;
+
+    }
+
+    .employee-payroll-details-btn{
+
+        width:100%;
+        justify-content:center;
+
+    }
+
+}
+
+    @media(max-width:900px){
+
+    .employee-payroll-details-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+==========================================================
+            EMPLOYEE LEAVE DETAILS
+==========================================================
+*/
+
+.employee-payroll-details-page{
+
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+
+}
+
+.employee-payroll-details-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+
+}
+
+.employee-payroll-details-title h1{
+
+    margin:0;
+    color:#003DA5;
+    font-size:32px;
+    font-weight:800;
+
+}
+
+.employee-payroll-details-title h1 i{
+
+    margin-right:12px;
+
+}
+
+.employee-payroll-details-title p{
+
+    margin-top:8px;
+    color:#78909C;
+    font-size:15px;
+
+}
+
+.employee-payroll-details-back-btn{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 22px;
+    border:none;
+    border-radius:14px;
+    background:#EBA000;
+    color:white;
+    font-weight:700;
+    text-decoration:none;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.employee-payroll-details-back-btn:hover{
+
+    background:#D69200;
+    transform:translateY(-3px);
+
+}
+
+.employee-payroll-details-card{
+
+    background:#ffffff;
+    border:1px solid #E8EDF5;
+    border-radius:24px;
+    padding:35px;
+
+    box-shadow:
+    0 12px 35px rgba(0,0,0,.06);
+
+    transition:.3s;
+
+}
+
+.employee-payroll-details-card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.employee-payroll-details-card-header{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding-bottom:25px;
+    margin-bottom:30px;
+    border-bottom:1px solid #EDF1F7;
+
+}
+
+.employee-payroll-details-icon{
+
+    width:60px;
+    height:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:18px;
+    background:#E3F2FD;
+    color:#003DA5;
+    font-size:24px;
+
+}
+
+.employee-payroll-details-card-header h2{
+
+    margin:0;
+    font-size:22px;
+    color:#263238;
+    font-weight:800;
+
+}
+
+.employee-payroll-details-card-header p{
+
+    margin-top:6px;
+    color:#78909C;
+
+}
+
+.employee-payroll-details-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+
+}
+
+.employee-payroll-details-group{
+
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+
+}
+
+.employee-payroll-details-group label{
+
+    font-size:13px;
+    font-weight:700;
+    color:#607D8B;
+
+}
+
+.employee-payroll-details-group label i{
+
+    color:#003DA5;
+    margin-right:8px;
+
+}
+
+.employee-payroll-details-group p{
+
+    margin:0;
+    font-size:16px;
+    font-weight:700;
+    color:#263238;
+    line-height:1.6;
+
+}
+
+.employee-payroll-details-summary{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+
+}
+
+.employee-payroll-summary-box{
+
+    background:#F8FAFC;
+    border:1px solid #EDF1F7;
+    padding:22px;
+    border-radius:18px;
+    transition:.3s;
+
+}
+
+.employee-payroll-summary-box:hover{
+
+    background:#F1F7FF;
+    transform:translateY(-3px);
+
+}
+
+.employee-payroll-summary-box span{
+
+    display:block;
+    color:#78909C;
+    font-size:13px;
+    font-weight:700;
+
+}
+
+.employee-payroll-summary-box h3{
+
+    margin:10px 0 0;
+    color:#003DA5;
+    font-size:18px;
+    font-weight:800;
+    line-height:1.5;
+
+}
+
+.employee-status-badge{
+
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:800;
+
+}
+
+.employee-status-badge.pending{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-status-badge.approved{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-status-badge.rejected{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-status-badge.cancelled{
+
+    background:#ECEFF1;
+    color:#607D8B;
+
+}
+
+.employee-payroll-details-group a{
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:#003DA5;
+    text-decoration:none;
+    font-weight:700;
+
+}
+
+.employee-payroll-details-group a:hover{
+
+    text-decoration:underline;
+
+}
+
+.employee-payroll-details-actions{
+
+    display:flex;
+    justify-content:flex-end;
+    margin-top:35px;
+    padding-top:25px;
+    border-top:1px solid #EDF1F7;
+
+}
+
+.employee-payroll-details-btn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px 30px;
+    border:none;
+    border-radius:14px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.employee-payroll-details-btn.download{
+
+    background:#003DA5;
+    color:white;
+
+}
+
+.employee-payroll-details-btn.download:hover{
+
+    background:#002B75;
+    transform:translateY(-3px);
+
+}
+
+@media(max-width:1000px){
+
+    .employee-payroll-details-summary{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .employee-payroll-details-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+}
+
+@media(max-width:800px){
+
+    .employee-payroll-details-header{
+
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+
+    }
+
+    .employee-payroll-details-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .employee-payroll-details-page{
+
+        padding:10px;
+
+    }
+
+    .employee-payroll-details-card{
+
+        padding:22px;
+        border-radius:18px;
+
+    }
+
+    .employee-payroll-details-title h1{
+
+        font-size:25px;
+
+    }
+
+    .employee-payroll-details-actions{
+
+        justify-content:center;
+
+    }
+
+    .employee-payroll-details-btn{
+
+        width:100%;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+==========================================================
+        EMPLOYEE CONTRACT DETAILS
+==========================================================
+*/
+.employee-contract-details-page{
+
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+
+}
+
+.employee-contract-details-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+
+}
+
+.employee-contract-details-title h1{
+
+    margin:0;
+    color:#003DA5;
+    font-size:32px;
+    font-weight:800;
+
+}
+
+.employee-contract-details-title h1 i{
+
+    margin-right:12px;
+
+}
+
+.employee-contract-details-title p{
+
+    margin-top:8px;
+    color:#78909C;
+    font-size:15px;
+
+}
+
+.employee-contract-details-back-btn{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 22px;
+    border-radius:14px;
+    background:#EBA000;
+    color:#FFFFFF;
+    font-weight:700;
+    text-decoration:none;
+    transition:.3s;
+
+}
+
+.employee-contract-details-back-btn:hover{
+
+    background:#D69200;
+    transform:translateY(-3px);
+
+}
+
+.employee-contract-details-card{
+
+    background:#FFFFFF;
+    border:1px solid #E8EDF5;
+    border-radius:24px;
+    padding:35px;
+
+    box-shadow:
+    0 12px 35px rgba(0,0,0,.06);
+
+    transition:.3s;
+
+}
+
+.employee-contract-details-card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.employee-contract-details-card-header{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding-bottom:25px;
+    margin-bottom:30px;
+    border-bottom:1px solid #EDF1F7;
+
+}
+
+.employee-contract-details-icon{
+
+    width:60px;
+    height:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:18px;
+    background:#E3F2FD;
+    color:#003DA5;
+    font-size:24px;
+
+}
+
+.employee-contract-details-card-header h2{
+
+    margin:0;
+    color:#263238;
+    font-size:22px;
+    font-weight:800;
+
+}
+
+.employee-contract-details-card-header p{
+
+    margin-top:6px;
+    color:#78909C;
+
+}
+
+.employee-contract-details-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+
+}
+
+.employee-contract-details-group{
+
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+
+}
+
+.employee-contract-details-group label{
+
+    font-size:13px;
+    font-weight:700;
+    color:#607D8B;
+
+}
+
+.employee-contract-details-group label i{
+
+    color:#003DA5;
+    margin-right:8px;
+
+}
+
+.employee-contract-details-group p{
+
+    margin:0;
+    font-size:16px;
+    font-weight:700;
+    color:#263238;
+    line-height:1.6;
+
+}
+
+.employee-contract-details-summary{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+
+}
+
+.employee-contract-summary-box{
+
+    background:#F8FAFC;
+    border:1px solid #EDF1F7;
+    padding:22px;
+    border-radius:18px;
+    transition:.3s;
+
+}
+
+.employee-contract-summary-box:hover{
+
+    background:#F1F7FF;
+    transform:translateY(-3px);
+
+}
+
+.employee-contract-summary-box span{
+
+    display:block;
+    color:#78909C;
+    font-size:13px;
+    font-weight:700;
+
+}
+
+.employee-contract-summary-box span i{
+
+    margin-right:8px;
+    color:#003DA5;
+
+}
+
+.employee-contract-summary-box h3{
+
+    margin:10px 0 0;
+    color:#003DA5;
+    font-size:18px;
+    font-weight:800;
+    line-height:1.5;
+
+}
+
+.employee-status-badge{
+
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:800;
+
+}
+
+.employee-status-badge.approved{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-status-badge.rejected{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-status-badge.cancelled{
+
+    background:#ECEFF1;
+    color:#607D8B;
+
+}
+
+.employee-contract-description{
+
+    background:#F8FAFC;
+    border:1px solid #EDF1F7;
+    border-radius:18px;
+    padding:25px;
+
+}
+
+.employee-contract-description p{
+
+    margin:0;
+    color:#455A64;
+    font-size:15px;
+    line-height:1.8;
+
+}
+
+.employee-contract-no-description{
+
+    text-align:center;
+    color:#90A4AE !important;
+    font-style:italic;
+
+}
+
+.employee-contract-document{
+
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+
+}
+
+.employee-contract-file-box{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:22px;
+    background:#F8FAFC;
+    border:1px solid #EDF1F7;
+    border-radius:18px;
+
+}
+
+.employee-contract-file-box > i{
+
+    width:60px;
+    height:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:18px;
+    background:#FDECEC;
+    color:#C62828;
+    font-size:28px;
+
+}
+
+.employee-contract-file-box h3{
+
+    margin:0;
+    color:#263238;
+    font-size:18px;
+    font-weight:800;
+
+}
+
+.employee-contract-file-box p{
+
+    margin-top:6px;
+    color:#78909C;
+    font-size:14px;
+
+}
+
+.employee-contract-no-file{
+
+    height:180px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#90A4AE;
+
+}
+
+.employee-contract-no-file i{
+
+    font-size:50px;
+    margin-bottom:15px;
+    color:#CBD5E1;
+
+}
+
+.employee-contract-no-file p{
+
+    margin:0;
+    font-size:15px;
+
+}
+
+.employee-contract-details-actions{
+
+    display:flex;
+    justify-content:flex-end;
+    margin-top:35px;
+    padding-top:25px;
+    border-top:1px solid #EDF1F7;
+
+}
+
+.employee-contract-details-btn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px 30px;
+    border:none;
+    border-radius:14px;
+    font-weight:700;
+    cursor:pointer;
+    text-decoration:none;
+    transition:.3s;
+
+}
+
+.employee-contract-details-btn.download{
+
+    background:#003DA5;
+    color:#FFFFFF;
+
+}
+
+.employee-contract-details-btn.download:hover{
+
+    background:#002B75;
+    transform:translateY(-3px);
+
+}
+
+.employee-contract-details-btn.back{
+
+    background:#EBA000;
+    color:#FFFFFF;
+
+}
+
+.employee-contract-details-btn.back:hover{
+
+    background:#D69200;
+    transform:translateY(-3px);
+
+}
+
+@media(max-width:1000px){
+
+    .employee-contract-details-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .employee-contract-details-summary{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:800px){
+
+    .employee-contract-details-header{
+
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+
+    }
+
+    .employee-contract-details-actions{
+
+        justify-content:center;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .employee-contract-details-page{
+
+        padding:10px;
+
+    }
+
+    .employee-contract-details-card{
+
+        padding:22px;
+        border-radius:18px;
+
+    }
+
+    .employee-contract-details-title h1{
+
+        font-size:25px;
+
+    }
+
+    .employee-contract-file-box{
+
+        flex-direction:column;
+        text-align:center;
+
+    }
+
+    .employee-contract-details-btn{
+
+        width:100%;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+==========================================================
+        EMPLOYEE RESIGNATION DETAILS
+==========================================================
+*/
+
+.employee-resignation-details-page{
+
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+
+}
+
+.employee-resignation-details-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+
+}
+
+.employee-resignation-details-title h1{
+
+    margin:0;
+    color:#003DA5;
+    font-size:32px;
+    font-weight:800;
+
+}
+
+.employee-resignation-details-title h1 i{
+
+    margin-right:12px;
+
+}
+
+.employee-resignation-details-title p{
+
+    margin-top:8px;
+    color:#78909C;
+    font-size:15px;
+
+}
+
+.employee-resignation-details-back-btn{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 22px;
+    border:none;
+    border-radius:14px;
+    background:#EBA000;
+    color:#ffffff;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+
+}
+
+.employee-resignation-details-back-btn:hover{
+
+    background:#D69200;
+    transform:translateY(-3px);
+
+}
+
+.employee-resignation-details-card{
+
+    background:#ffffff;
+    border:1px solid #E8EDF5;
+    border-radius:24px;
+    padding:35px;
+
+    box-shadow:
+    0 12px 35px rgba(0,0,0,.06);
+
+    transition:.3s;
+
+}
+
+.employee-resignation-details-card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.employee-resignation-details-card-header{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding-bottom:25px;
+    margin-bottom:30px;
+    border-bottom:1px solid #EDF1F7;
+
+}
+
+.employee-resignation-details-icon{
+
+    width:60px;
+    height:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:18px;
+    background:#E3F2FD;
+    color:#003DA5;
+    font-size:24px;
+
+}
+
+.employee-resignation-details-card-header h2{
+
+    margin:0;
+    font-size:22px;
+    color:#263238;
+    font-weight:800;
+
+}
+
+.employee-resignation-details-card-header p{
+
+    margin-top:6px;
+    color:#78909C;
+
+}
+
+.employee-resignation-details-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+
+}
+
+.employee-resignation-details-group{
+
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+
+}
+
+.employee-resignation-details-group label{
+
+    font-size:13px;
+    font-weight:700;
+    color:#607D8B;
+
+}
+
+.employee-resignation-details-group label i{
+
+    color:#003DA5;
+    margin-right:8px;
+
+}
+
+.employee-resignation-details-group p{
+
+    margin:0;
+    font-size:16px;
+    font-weight:700;
+    color:#263238;
+    line-height:1.7;
+
+}
+
+.employee-resignation-details-summary{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+
+}
+
+.employee-resignation-details-summary-box{
+
+    background:#F8FAFC;
+    border:1px solid #EDF1F7;
+    border-radius:18px;
+    padding:22px;
+    transition:.3s;
+
+}
+
+.employee-resignation-details-summary-box:hover{
+
+    background:#F1F7FF;
+    transform:translateY(-3px);
+
+}
+
+.employee-resignation-details-summary-box span{
+
+    display:block;
+    color:#78909C;
+    font-size:13px;
+    font-weight:700;
+
+}
+
+.employee-resignation-details-summary-box h3{
+
+    margin:10px 0 0;
+    color:#003DA5;
+    font-size:18px;
+    font-weight:800;
+    line-height:1.5;
+
+}
+
+.employee-resignation-status-badge{
+
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:800;
+
+}
+
+.employee-resignation-status-badge.pending{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-resignation-status-badge.approved{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-resignation-status-badge.rejected{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-resignation-details-actions{
+
+    display:flex;
+    justify-content:flex-end;
+    margin-top:35px;
+    padding-top:25px;
+    border-top:1px solid #EDF1F7;
+
+}
+
+.employee-resignation-details-btn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px 30px;
+    border:none;
+    border-radius:14px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.employee-resignation-details-btn.download{
+
+    background:#003DA5;
+    color:#ffffff;
+
+}
+
+.employee-resignation-details-btn.download:hover{
+
+    background:#002B75;
+    transform:translateY(-3px);
+
+}
+
+@media(max-width:1000px){
+
+    .employee-resignation-details-summary{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .employee-resignation-details-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+}
+
+@media(max-width:800px){
+
+    .employee-resignation-details-header{
+
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+
+    }
+
+    .employee-resignation-details-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .employee-resignation-details-page{
+
+        padding:10px;
+
+    }
+
+    .employee-resignation-details-card{
+
+        padding:22px;
+        border-radius:18px;
+
+    }
+
+    .employee-resignation-details-title h1{
+
+        font-size:25px;
+
+    }
+
+    .employee-resignation-details-actions{
+
+        justify-content:center;
+
+    }
+
+    .employee-resignation-details-btn{
+
+        width:100%;
+
+    }
+
+    .employee-resignation-details-back-btn{
+
+        width:100%;
+        justify-content:center;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+==========================================================
+        EMPLOYEE PROFILE EDIT CSS
+
+        Daily Cravings Foods Inc.
+        Employee Management System
+
+        Navy & Gold Theme
+
+==========================================================
+*/
+
+
+
+
+
+
+/* ======================================================
+        MAIN PAGE
+====================================================== */
+
+
+.employee-profile-edit-page{
+
+
+    width:100%;
+
+    padding:30px;
+
+    animation:fadeIn .4s ease-in-out;
+
+
+}
+
+
+
+
+
+
+@keyframes fadeIn{
+
+
+from{
+
+    opacity:0;
+
+    transform:translateY(10px);
+
+}
+
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* ======================================================
+        HEADER
+====================================================== */
+
+
+.employee-profile-edit-header{
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#ffffff;
+
+    padding:25px 30px;
+
+    border-radius:16px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+
+}
+
+
+
+
+
+
+
+.employee-profile-edit-title h1{
+
+
+    margin:0;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#0D47A1;
+
+
+}
+
+
+
+
+
+
+.employee-profile-edit-title h1 i{
+
+
+    margin-right:10px;
+
+    color:#FFC107;
+
+
+}
+
+
+
+
+
+
+.employee-profile-edit-title p{
+
+
+    margin-top:8px;
+
+    color:#64748b;
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* BACK BUTTON */
+
+
+
+
+.employee-profile-back-btn{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    text-decoration:none;
+
+    background:#0D47A1;
+
+    color:white;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+
+.employee-profile-back-btn:hover{
+
+
+    background:#08306b;
+
+    transform:translateY(-2px);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ======================================================
+        PROFILE CARD
+====================================================== */
+
+
+
+.employee-profile-edit-card{
+
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.08);
+
+
+}
+
+
+
+
+
+
+
+.employee-profile-edit-card-header{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    border-bottom:1px solid #e5e7eb;
+
+    padding-bottom:20px;
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+
+.employee-profile-edit-icon{
+
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#0D47A1;
+
+    color:white;
+
+    border-radius:50%;
+
+    font-size:22px;
+
+
+}
+
+
+
+
+
+
+.employee-profile-edit-card-header h2{
+
+
+    margin:0;
+
+    color:#263238;
+
+    font-size:22px;
+
+
+}
+
+
+
+
+
+.employee-profile-edit-card-header p{
+
+
+    margin:5px 0 0;
+
+    color:#64748b;
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ======================================================
+        SECTION TITLE
+====================================================== */
+
+
+.employee-profile-section-title{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:30px 0 20px;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    color:#0D47A1;
+
+    padding-bottom:10px;
+
+    border-bottom:2px solid #FFC107;
+
+
+}
+
+
+
+
+
+
+.employee-profile-section-title i{
+
+
+    color:#FFC107;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ======================================================
+        PROFILE PICTURE UPLOAD
+====================================================== */
+
+
+.employee-profile-picture-upload{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    background:#f8fafc;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+
+
+.employee-profile-preview{
+
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:5px solid #0D47A1;
+
+    background:#e5e7eb;
+
+    flex-shrink:0;
+
+
+}
+
+
+
+
+
+
+
+.employee-profile-preview img{
+
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-profile-picture-upload small{
+
+
+    display:block;
+
+    margin-top:8px;
+
+    color:#64748b;
+
+    font-size:12px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ======================================================
+        FORM GRID
+====================================================== */
+
+
+.employee-profile-edit-grid{
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+    gap:20px;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-profile-edit-group{
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+
+}
+
+
+
+
+
+
+.employee-profile-edit-group label{
+
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#374151;
+
+
+}
+
+
+
+
+
+
+
+.employee-profile-edit-group label i{
+
+
+    color:#0D47A1;
+
+    margin-right:5px;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-profile-edit-group input,
+
+
+.employee-profile-edit-group select,
+
+
+.employee-profile-edit-group textarea{
+
+
+    width:100%;
+
+    padding:13px 15px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    outline:none;
+
+    transition:.3s;
+
+    background:#ffffff;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-profile-edit-group textarea{
+
+
+    resize:none;
+
+
+}
+
+
+
+
+
+
+
+.employee-profile-edit-group input:focus,
+
+
+.employee-profile-edit-group select:focus,
+
+
+.employee-profile-edit-group textarea:focus{
+
+
+    border-color:#0D47A1;
+
+    box-shadow:0 0 0 3px rgba(13,71,161,.15);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* READ ONLY FIELD */
+
+
+.employee-profile-edit-group input[readonly]{
+
+
+    background:#f1f5f9;
+
+    color:#64748b;
+
+    cursor:not-allowed;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* FULL WIDTH */
+
+
+.employee-profile-edit-group.full-width{
+
+
+    grid-column:1 / -1;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ======================================================
+        ACTION BUTTONS
+====================================================== */
+
+
+.employee-profile-edit-actions{
+
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    margin-top:35px;
+
+    padding-top:25px;
+
+    border-top:1px solid #e5e7eb;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-profile-cancel-btn,
+
+
+.employee-profile-save-btn{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:13px 25px;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-profile-cancel-btn{
+
+
+    background:#e5e7eb;
+
+    color:#374151;
+
+
+}
+
+
+
+
+
+
+.employee-profile-cancel-btn:hover{
+
+
+    background:#cbd5e1;
+
+
+}
+
+
+
+
+
+
+
+.employee-profile-save-btn{
+
+
+    border:none;
+
+    background:#0D47A1;
+
+    color:white;
+
+
+}
+
+
+
+
+
+
+.employee-profile-save-btn:hover{
+
+
+    background:#08306b;
+
+    transform:translateY(-2px);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ======================================================
+        FILE INPUT
+====================================================== */
+
+
+.employee-profile-edit-group input[type="file"]{
+
+
+    padding:10px;
+
+    background:white;
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ======================================================
+        RESPONSIVE
+====================================================== */
+
+
+@media(max-width:900px){
+
+
+
+.employee-profile-edit-grid{
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+
+
+
+
+.employee-profile-edit-header{
+
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+
+}
+
+
+
+
+
+
+
+.employee-profile-picture-upload{
+
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+@media(max-width:600px){
+
+
+
+.employee-profile-edit-page{
+
+
+    padding:15px;
+
+
+}
+
+
+
+
+
+.employee-profile-edit-card{
+
+
+    padding:20px;
+
+
+}
+
+
+
+
+
+.employee-profile-edit-actions{
+
+
+    flex-direction:column;
+
+
+}
+
+
+
+
+
+.employee-profile-save-btn,
+
+
+.employee-profile-cancel-btn{
+
+
+    justify-content:center;
+
+    width:100%;
+
+
+}
+
+
+
+
+
+.employee-profile-preview{
+
+
+    width:110px;
+
+    height:110px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+==========================================================
+        EMPLOYEE CHANGE PASSWORD CSS
+
+        Daily Cravings Foods Inc.
+        Employee Management System
+
+        Navy & Gold Theme
+
+==========================================================
+*/
+
+
+
+
+
+
+/* ======================================================
+        MAIN PAGE
+====================================================== */
+
+
+.employee-password-page{
+
+
+    width:100%;
+
+    padding:30px;
+
+    animation:fadeIn .4s ease-in-out;
+
+
+}
+
+
+
+
+
+
+@keyframes fadeIn{
+
+
+from{
+
+    opacity:0;
+
+    transform:translateY(10px);
+
+}
+
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ======================================================
+        HEADER
+====================================================== */
+
+
+.employee-password-header{
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#ffffff;
+
+    padding:25px 30px;
+
+    border-radius:16px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+
+    0 8px 20px rgba(0,0,0,.08);
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-title h1{
+
+
+    margin:0;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#0D47A1;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-title h1 i{
+
+
+    margin-right:10px;
+
+    color:#FFC107;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-title p{
+
+
+    margin-top:8px;
+
+    color:#64748b;
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* BACK BUTTON */
+
+
+.employee-password-back-btn{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    text-decoration:none;
+
+    background:#0D47A1;
+
+    color:white;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+
+.employee-password-back-btn:hover{
+
+
+    background:#08306b;
+
+    transform:translateY(-2px);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================================================
+        PASSWORD CARD
+====================================================== */
+
+
+.employee-password-card{
+
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.08);
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-card-header{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding-bottom:20px;
+
+    margin-bottom:30px;
+
+    border-bottom:1px solid #e5e7eb;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-icon{
+
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#0D47A1;
+
+    color:white;
+
+    border-radius:50%;
+
+    font-size:22px;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-card-header h2{
+
+
+    margin:0;
+
+    color:#263238;
+
+    font-size:22px;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-card-header p{
+
+
+    margin:5px 0 0;
+
+    color:#64748b;
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ======================================================
+        PASSWORD FORM
+====================================================== */
+
+
+.employee-password-form{
+
+
+    width:100%;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-group{
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    margin-bottom:22px;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-group label{
+
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#374151;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-group label i{
+
+
+    color:#0D47A1;
+
+    margin-right:5px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* PASSWORD INPUT WRAPPER */
+
+
+.employee-password-input{
+
+
+    position:relative;
+
+    width:100%;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-input input{
+
+
+    width:100%;
+
+    padding:13px 50px 13px 15px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    outline:none;
+
+    transition:.3s;
+
+    background:#ffffff;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-input input:focus{
+
+
+    border-color:#0D47A1;
+
+    box-shadow:
+
+    0 0 0 3px rgba(13,71,161,.15);
+
+
+}
+
+
+
+
+
+
+
+
+/* SHOW PASSWORD BUTTON */
+
+
+.toggle-password{
+
+
+    position:absolute;
+
+    right:12px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    color:#64748b;
+
+    font-size:16px;
+
+
+}
+
+
+
+
+
+
+
+
+.toggle-password:hover{
+
+
+    color:#0D47A1;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================================================
+        PASSWORD REQUIREMENT BOX
+====================================================== */
+
+
+.employee-password-note{
+
+
+    background:#f8fafc;
+
+    border-left:5px solid #FFC107;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    margin-top:25px;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-note h3{
+
+
+    margin:0 0 12px;
+
+    font-size:16px;
+
+    color:#0D47A1;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-note h3 i{
+
+
+    color:#FFC107;
+
+    margin-right:8px;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-note ul{
+
+
+    margin:0;
+
+    padding-left:20px;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-note li{
+
+
+    color:#64748b;
+
+    font-size:14px;
+
+    margin-bottom:8px;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================================================
+        ACTION BUTTONS
+====================================================== */
+
+
+.employee-password-actions{
+
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    margin-top:35px;
+
+    padding-top:25px;
+
+    border-top:1px solid #e5e7eb;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-cancel-btn,
+
+
+.employee-password-save-btn{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:13px 25px;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+
+
+
+
+.employee-password-cancel-btn{
+
+
+    background:#e5e7eb;
+
+    color:#374151;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-cancel-btn:hover{
+
+
+    background:#cbd5e1;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-save-btn{
+
+
+    border:none;
+
+    background:#0D47A1;
+
+    color:white;
+
+
+}
+
+
+
+
+
+
+
+
+.employee-password-save-btn:hover{
+
+
+    background:#08306b;
+
+    transform:translateY(-2px);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================================================
+        RESPONSIVE
+====================================================== */
+
+
+@media(max-width:900px){
+
+
+
+.employee-password-header{
+
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+
+}
+
+
+
+
+.employee-password-card{
+
+
+    padding:25px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+@media(max-width:600px){
+
+
+
+.employee-password-page{
+
+
+    padding:15px;
+
+
+}
+
+
+
+
+
+.employee-password-card{
+
+
+    padding:20px;
+
+
+}
+
+
+
+
+
+
+.employee-password-actions{
+
+
+    flex-direction:column;
+
+
+}
+
+
+
+
+
+
+.employee-password-save-btn,
+
+
+.employee-password-cancel-btn{
+
+
+    width:100%;
+
+    justify-content:center;
+
+
+}
+
+
+
+
+
+}

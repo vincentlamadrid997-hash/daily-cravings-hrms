@@ -1,0 +1,9726 @@
+.emp-layout{
+
+    display:flex;
+    min-height:100vh;
+    background:var(--background);
+
+}
+
+.emp-main{
+
+    margin-left:var(--sidebar-width);
+    width:
+    calc(100% - var(--sidebar-width));
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+                    EMPLOYEE SIDEBAR
+========================================================== */
+.emp-sidebar{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:var(--sidebar-width);
+    height:100vh;
+
+    background:
+    linear-gradient(
+        180deg,
+        #0D47A1,
+        #06265C
+    );
+
+    display:flex;
+    flex-direction:column;
+    color:white;
+    z-index:1200;
+    overflow-y:auto;
+
+    box-shadow:
+    10px 0 30px rgba(0,0,0,.15);
+
+}
+
+.emp-sidebar::-webkit-scrollbar{
+
+    width:5px;
+
+}
+
+.emp-sidebar::-webkit-scrollbar-thumb{
+
+    background:
+    rgba(255,193,7,.5);
+
+    border-radius:20px;
+
+}
+
+.emp-sidebar-brand-area{
+
+    padding:25px 22px;
+
+    border-bottom:
+    1px solid rgba(255,255,255,.15);
+
+}
+
+.emp-sidebar-brand{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+}
+
+.emp-logo-wrapper{
+
+    width:58px;
+    height:58px;
+    background:#fff;
+    border-radius:16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.emp-sidebar-logo{
+
+    width:45px;
+    height:45px;
+    object-fit:contain;
+
+}
+
+.emp-brand-text h3{
+
+    margin:0;
+    font-size:18px;
+    font-weight:800;
+    color:#fff;
+
+}
+
+.emp-brand-text span{
+
+    display:block;
+    color:#FFC107;
+    font-size:13px;
+    font-weight:700;
+
+}
+
+.emp-brand-text small{
+
+    color:rgba(255,255,255,.75);
+    font-size:11px;
+
+}
+
+.emp-sidebar-menu{
+
+    flex:1;
+    padding:20px 15px;
+
+}
+
+.emp-sidebar-title{
+
+    font-size:11px;
+    letter-spacing:1px;
+    color:rgba(255,255,255,.55);
+    margin:18px 12px 10px;
+    font-weight:700;
+
+}
+
+.emp-sidebar-link{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:14px 18px;
+    margin-bottom:6px;
+    border-radius:14px;
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s ease;
+
+}
+
+.emp-sidebar-link i{
+
+    width:22px;
+    font-size:17px;
+
+}
+
+.emp-sidebar-link:hover{
+
+    background:rgba(255,255,255,.12);
+    transform:translateX(5px);
+
+}
+
+.emp-sidebar-link.active{
+
+    background:#FFC107;
+    color:#0D47A1;
+
+    box-shadow:
+    0 8px 20px rgba(255,193,7,.35);
+
+}
+
+.emp-sidebar-link.active i{
+
+    color:#0D47A1;
+
+}
+
+.emp-sidebar-footer{
+
+    padding:20px;
+
+    border-top:
+    1px solid rgba(255,255,255,.15);
+
+}
+
+.emp-sidebar-user{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:15px;
+
+}
+
+.emp-sidebar-user-icon{
+
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#FFC107;
+    color:#0D47A1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+
+}
+
+.emp-sidebar-user-image{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+.emp-sidebar-user strong{
+
+    display:block;
+    font-size:13px;
+
+}
+
+.emp-sidebar-user small{
+
+    color:rgba(255,255,255,.7);
+    font-size:12px;
+
+}
+
+.emp-sidebar-logout{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    padding:13px;
+    border-radius:12px;
+    background:rgba(255,255,255,.12);
+    color:white;
+    font-weight:700;
+    transition:.3s;
+
+}
+
+.emp-sidebar-logout:hover{
+
+    background:#C62828;
+
+}
+
+@media(max-width:992px){
+
+    .emp-sidebar{
+
+        transform:translateX(-100%);
+        transition:.3s;
+
+    }
+
+    .emp-sidebar.active{
+
+        transform:translateX(0);
+
+    }
+
+    .emp-main{
+
+        margin-left:0;
+        width:100%;
+
+    }
+
+    .emp-sidebar-overlay{
+
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,.45);
+        opacity:0;
+        visibility:hidden;
+        transition:.3s;
+        z-index:1100;
+
+    }
+
+    .emp-sidebar-overlay.active{
+
+        opacity:1;
+        visibility:visible;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+                    EMPLOYEE HEADER
+========================================================== */
+.emp-header{
+
+    position:fixed;
+    top:0;
+    left:var(--sidebar-width);
+    right:0;
+    height:82px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 30px;
+    background:#ffffff;
+    border-bottom:1px solid var(--border);
+    box-shadow:var(--shadow);
+    z-index:1100;
+
+}
+
+.emp-header-left{
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+}
+
+.emp-header-left h2{
+
+    margin:0 0 8px;
+    color:var(--primary);
+    font-size:28px;
+    font-weight:700;
+
+}
+
+.emp-header-left p{
+
+    margin:0;
+    color:var(--text-light);
+    font-size:14px;
+
+}
+
+.emp-header-left strong{
+
+    color:var(--primary);
+
+}
+
+.emp-header-right{
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+}
+
+.emp-notification-btn{
+
+    position:relative;
+    width:46px;
+    height:46px;
+    border:none;
+    border-radius:50%;
+    background:#FFF8E1;
+    color:#F9A825;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+
+}
+
+.emp-notification-btn:hover{
+
+    background:#FFE082;
+    transform:translateY(-2px);
+
+}
+
+.emp-notification-count{
+
+    position:absolute;
+    top:-4px;
+    right:-2px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#C62828;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:11px;
+    font-weight:700;
+
+}
+
+.emp-profile{
+
+    display:flex;
+    align-items:center;
+
+}
+
+.emp-profile-btn{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+    cursor:pointer;
+
+}
+
+.emp-profile-image{
+
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid var(--accent);
+
+}
+
+.emp-profile-info{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.emp-profile-info strong{
+
+    color:var(--text);
+    font-size:15px;
+    font-weight:700;
+
+}
+
+.emp-profile-info small{
+
+    color:var(--text-light);
+    font-size:13px;
+
+}
+
+.emp-content{
+
+    margin-top:82px;
+    padding:30px;
+
+}
+
+@media(max-width:1200px){
+
+    .emp-header{
+
+        left:0;
+        padding:0 20px;
+
+    }
+
+    .emp-main{
+
+        margin-left:0;
+        width:100%;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .emp-header{
+
+        position:relative;
+        flex-direction:column;
+        align-items:flex-start;
+        justify-content:center;
+        gap:15px;
+        height:auto;
+        padding:20px;
+
+    }
+
+    .emp-header-right{
+
+        width:100%;
+        justify-content:space-between;
+
+    }
+
+    .emp-content{
+
+        margin-top:20px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .emp-header-left h2{
+
+        font-size:22px;
+
+    }
+
+    .emp-profile-info{
+
+        display:none;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+                   EMPLOYEE DASHBOARD PANEL
+========================================================== */
+.employee-main{
+
+    flex:1;
+    margin-left:280px;
+    margin-top:82px;
+    min-height:calc(100vh - 82px);
+    padding:30px;
+    background:#f5f7fb;
+    transition:.3s ease;
+
+}
+
+.employee-dashboard{
+
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+
+}
+
+.employee-dashboard-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+
+}
+
+.employee-dashboard-title h1{
+
+    margin:0;
+    font-size:34px;
+    font-weight:800;
+    color:#003DA5;
+
+}
+
+.employee-dashboard-title h1 i{
+
+    margin-right:10px;
+
+}
+
+.employee-dashboard-title p{
+
+    margin-top:8px;
+    font-size:15px;
+    color:#607D8B;
+    line-height:1.7;
+
+}
+
+.employee-dashboard-stats{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+
+}
+
+.employee-dashboard-stat-card{
+
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    overflow:hidden;
+    background:#ffffff;
+    border:1px solid #edf1f7;
+    border-radius:22px;
+    padding:24px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+    transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+
+}
+
+.employee-dashboard-stat-card:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,.12);
+
+}
+
+.employee-dashboard-stat-card::before{
+
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:6px;
+    height:100%;
+    background:#003DA5;
+
+}
+
+.employee-dashboard-stat-icon{
+
+    width:72px;
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    border-radius:20px;
+    font-size:30px;
+    transition:.3s ease;
+
+}
+
+.employee-dashboard-stat-content{
+
+    flex:1;
+
+}
+
+.employee-dashboard-stat-content span{
+
+    display:block;
+    margin-bottom:8px;
+    font-size:14px;
+    font-weight:600;
+    color:#607D8B;
+
+}
+
+.employee-dashboard-stat-content h2{
+
+    margin:0;
+    font-size:32px;
+    font-weight:800;
+    color:#263238;
+
+}
+
+.employee-dashboard-green{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-dashboard-stat-card:nth-child(1)::before{
+
+    background:#2E7D32;
+
+}
+
+.employee-dashboard-blue{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-dashboard-stat-card:nth-child(2)::before{
+
+    background:#1565C0;
+
+}
+
+.employee-dashboard-orange{
+
+    background:#FFF3E0;
+    color:#EF6C00;
+
+}
+
+.employee-dashboard-stat-card:nth-child(3)::before{
+
+    background:#EF6C00;
+
+}
+
+.employee-dashboard-red{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-dashboard-stat-card:nth-child(4)::before{
+
+    background:#C62828;
+
+}
+
+.employee-dashboard-purple{
+
+    background:#F3E5F5;
+    color:#8E24AA;
+
+}
+
+.employee-dashboard-stat-card:nth-child(5)::before{
+
+    background:#8E24AA;
+
+}
+
+.employee-dashboard-cyan{
+
+    background:#E0F7FA;
+    color:#00838F;
+
+}
+
+.employee-dashboard-stat-card:nth-child(6)::before{
+
+    background:#00838F;
+
+}
+
+.employee-dashboard-indigo{
+
+    background:#E8EAF6;
+    color:#3949AB;
+
+}
+
+.employee-dashboard-stat-card:nth-child(7)::before{
+
+    background:#3949AB;
+
+}
+
+.employee-dashboard-teal{
+
+    background:#E0F2F1;
+    color:#00695C;
+
+}
+
+.employee-dashboard-stat-card:nth-child(8)::before{
+
+    background:#00695C;
+
+}
+
+@keyframes employeeDashboardFade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+.employee-dashboard-stat-card{
+
+    animation:
+    employeeDashboardFade .45s ease both;
+
+}
+
+.employee-dashboard-stat-icon{
+
+    transition:.3s ease;
+
+}
+
+.employee-dashboard-stat-card:hover 
+.employee-dashboard-stat-icon{
+
+    transform:
+    rotate(-8deg)
+    scale(1.08);
+
+}
+
+@media(max-width:1200px){
+
+    .employee-dashboard-stats{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .employee-main{
+
+        padding:20px;
+
+    }
+
+    .employee-dashboard-header{
+
+        flex-direction:column;
+        align-items:flex-start;
+
+    }
+
+    .employee-dashboard-title h1{
+
+        font-size:28px;
+
+    }
+
+    .employee-dashboard-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .employee-dashboard-stat-card{
+
+        padding:20px;
+        border-radius:18px;
+
+    }
+
+    .employee-dashboard-stat-icon{
+
+        width:60px;
+        height:60px;
+        font-size:24px;
+
+    }
+
+    .employee-dashboard-stat-content h2{
+
+        font-size:28px;
+
+    }
+
+}
+
+.employee-dashboard-content{
+
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:25px;
+    margin-top:30px;
+    align-items:start;
+
+}
+
+.employee-dashboard-left,
+.employee-dashboard-right{
+
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+
+}
+
+.employee-widget{
+
+    background:#ffffff;
+    border:1px solid #edf1f7;
+    border-radius:22px;
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+    transition:.35s ease;
+
+    animation:
+    employeeDashboardFade .45s ease both;
+
+}
+
+.employee-widget:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,.12);
+
+}
+
+.employee-widget-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 24px;
+    border-bottom:1px solid #edf1f7;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(0,61,165,.05),
+        rgba(255,199,44,.08)
+
+    );
+
+}
+
+.employee-widget-title{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+}
+
+.employee-widget-title i{
+
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    background:#003DA5;
+    color:#ffffff;
+    font-size:18px;
+    transition:.3s ease;
+
+}
+
+.employee-widget:hover 
+.employee-widget-title i{
+
+    transform:
+    rotate(-8deg)
+    scale(1.08);
+
+}
+
+.employee-widget-title h3{
+
+    margin:0;
+    font-size:20px;
+    font-weight:700;
+    color:#003DA5;
+
+
+}
+
+.employee-widget-body{
+
+    padding:24px;
+
+}
+
+.employee-scroll-widget{
+
+    max-height:560px;
+    overflow-y:auto;
+
+}
+
+.employee-scroll-widget::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.employee-scroll-widget::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+.employee-scroll-widget::-webkit-scrollbar-thumb{
+
+    background:#cfd8dc;
+    border-radius:50px;
+
+}
+
+.employee-scroll-widget::-webkit-scrollbar-thumb:hover{
+
+    background:#90a4ae;
+
+}
+
+.employee-activity-list{
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+
+}
+
+.employee-activity-item{
+
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    padding:18px;
+    background:#fbfcfe;
+    border:1px solid #edf1f7;
+    border-radius:18px;
+    transition:.3s ease;
+
+}
+
+.employee-activity-item:hover{
+
+    transform:translateX(6px);
+    background:#f5f9ff;
+    border-color:#d6e6ff;
+
+}
+
+.employee-activity-icon{
+
+    width:52px;
+    height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    border-radius:16px;
+    font-size:20px;
+
+}
+
+.employee-activity-icon.primary{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-activity-icon.success{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-activity-icon.warning{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-activity-icon.danger{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-activity-icon.secondary{
+
+    background:#F3E5F5;
+    color:#7B1FA2;
+
+}
+
+.employee-activity-icon.accent{
+
+    background:#E0F7FA;
+    color:#00838F;
+
+}
+
+.employee-activity-content{
+
+    flex:1;
+    min-width:0;
+
+}
+
+.employee-activity-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin-bottom:8px;
+
+}
+
+.employee-activity-header h4{
+
+
+    margin:0;
+    font-size:16px;
+    font-weight:700;
+    color:#263238;
+
+}
+
+.employee-activity-content p{
+
+    margin:0;
+    font-size:14px;
+    line-height:1.7;
+    color:#607D8B;
+
+}
+
+.employee-activity-badge{
+
+    padding:5px 12px;
+    border-radius:30px;
+    background:#EEF4FF;
+    color:#1565C0;
+    font-size:11px;
+    font-weight:700;
+    white-space:nowrap;
+
+}
+
+.employee-activity-time{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:12px;
+    font-size:12px;
+    color:#90A4AE;
+
+}
+
+.employee-activity-time i{
+
+    color:#003DA5;
+
+}
+
+.employee-empty-state{
+
+    text-align:center;
+    padding:50px 20px;
+
+}
+
+.employee-empty-state i{
+
+    width:90px;
+    height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 20px;
+    border-radius:50%;
+    background:#EEF4FF;
+    color:#003DA5;
+    font-size:38px;
+
+}
+
+.employee-empty-state h4{
+
+    margin:0 0 10px;
+    font-size:20px;
+    font-weight:700;
+    color:#003DA5;
+
+}
+
+.employee-empty-state p{
+
+    margin:0;
+    font-size:14px;
+    line-height:1.7;
+    color:#78909C;
+
+}
+
+@media(max-width:992px){
+
+    .employee-dashboard-content{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .employee-widget-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+    }
+
+    .employee-widget-body{
+
+        padding:20px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .employee-widget{
+
+        border-radius:18px;
+
+    }
+
+    .employee-widget-title h3{
+
+        font-size:18px;
+
+    }
+
+    .employee-activity-item{
+
+        padding:16px;
+
+    }
+
+    .employee-activity-icon{
+
+        width:46px;
+        height:46px;
+        font-size:18px;
+
+    }
+
+}
+
+.employee-attendance-modern-container{
+
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+
+}
+
+.employee-attendance-status-box{
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:25px;
+    border-radius:22px;
+    background:#F8FAFD;
+    border:1px solid #EDF1F7;
+    position:relative;
+    overflow:hidden;
+    transition:.3s ease;
+
+}
+
+.employee-attendance-status-box:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.08);
+
+}
+
+.employee-attendance-status-box::before{
+
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:6px;
+    height:100%;
+
+}
+
+.employee-attendance-status-box.success::before{
+
+    background:#2E7D32;
+
+}
+
+.employee-attendance-status-box.warning::before{
+
+    background:#F9A825;
+
+}
+
+.employee-attendance-status-box.danger::before{
+
+    background:#C62828;
+
+}
+
+.employee-attendance-status-box.primary::before{
+
+    background:#1565C0;
+
+}
+
+.employee-attendance-status-box.accent::before{
+
+    background:#00838F;
+
+}
+
+.employee-attendance-status-icon{
+
+    width:70px;
+    height:70px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:20px;
+    font-size:30px;
+    flex-shrink:0;
+
+}
+
+.employee-attendance-status-box.success 
+.employee-attendance-status-icon{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-attendance-status-box.warning 
+.employee-attendance-status-icon{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-attendance-status-box.danger 
+.employee-attendance-status-icon{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-attendance-status-box.primary 
+.employee-attendance-status-icon{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-attendance-status-box.accent 
+.employee-attendance-status-icon{
+
+    background:#E0F7FA;
+    color:#00838F;
+
+}
+
+.employee-attendance-status-box span{
+
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    color:#607D8B;
+
+}
+
+.employee-attendance-status-box h2{
+
+    margin:4px 0;
+    font-size:28px;
+    font-weight:800;
+    color:#263238;
+
+}
+
+.employee-attendance-status-box p{
+
+    margin:0;
+    font-size:14px;
+    color:#78909C;
+
+}
+
+.employee-attendance-details{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+
+}
+
+.employee-attendance-detail-card{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:20px;
+    background:#ffffff;
+    border:1px solid #EDF1F7;
+    border-radius:18px;
+    transition:.3s ease;
+
+}
+
+.employee-attendance-detail-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 12px 25px rgba(0,0,0,.08);
+
+}
+
+.employee-attendance-detail-icon{
+
+    width:55px;
+    height:55px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:16px;
+    background:#E3F2FD;
+    color:#1565C0;
+    font-size:22px;
+
+}
+
+.employee-attendance-detail-icon.logout{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-attendance-detail-icon.date{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-attendance-detail-card span{
+
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    color:#607D8B;
+
+}
+
+.employee-attendance-detail-card strong{
+
+    display:block;
+    margin-top:5px;
+    font-size:18px;
+    font-weight:800;
+    color:#263238;
+
+}
+
+.employee-payroll-breakdown{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:20px;
+
+}
+
+.employee-payroll-box{
+
+    background:#F8FAFD;
+    border:1px solid #EDF1F7;
+    border-radius:18px;
+    padding:22px;
+    text-align:center;
+    transition:.3s ease;
+
+}
+
+.employee-payroll-box:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 12px 25px rgba(0,0,0,.08);
+
+}
+
+.employee-payroll-box span{
+
+    display:block;
+    margin-bottom:10px;
+    font-size:13px;
+    font-weight:600;
+    color:#607D8B;
+
+}
+
+.employee-payroll-box strong{
+
+    font-size:24px;
+    font-weight:800;
+    color:#003DA5;
+
+}
+
+.employee-attendance-modern,
+.employee-payroll-box{
+
+    animation:
+    employeeDashboardFade .45s ease both;
+
+}
+
+@media(max-width:992px){
+
+    .employee-attendance-details{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .employee-payroll-breakdown{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .employee-attendance-status-box{
+
+        flex-direction:column;
+        align-items:flex-start;
+
+    }
+
+    .employee-attendance-status-icon{
+
+        width:60px;
+        height:60px;
+        font-size:26px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .employee-attendance-status-box{
+
+        padding:20px;
+        border-radius:18px;
+
+    }
+
+    .employee-attendance-status-box h2{
+
+        font-size:24px;
+
+    }
+
+    .employee-attendance-detail-card{
+
+        padding:16px;
+
+    }
+
+    .employee-payroll-box{
+
+        padding:18px;
+
+    }
+
+    .employee-payroll-box strong{
+
+        font-size:20px;
+
+    }
+
+}
+
+.employee-widget + .employee-widget{
+
+    margin-top:30px;
+
+}
+
+.employee-dashboard > *{
+
+    animation:
+    employeeDashboardFade .45s ease both;
+
+}
+
+.employee-status-badge{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:6px 14px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+
+}
+
+.employee-status-badge.success{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-status-badge.warning{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-status-badge.danger{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-status-badge.primary{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-info-list{
+
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+
+}
+
+.employee-info-row{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 0;
+    border-bottom:1px solid #EDF1F7;
+
+}
+
+.employee-info-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.employee-info-label{
+
+    font-size:14px;
+    font-weight:600;
+    color:#607D8B;
+
+}
+
+.employee-info-value{
+
+    font-size:15px;
+    font-weight:700;
+    color:#263238;
+
+}
+
+.employee-summary-grid{
+
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:18px;
+
+}
+
+.employee-summary-box{
+
+    background:#F8FAFD;
+    border:1px solid #EDF1F7;
+    border-radius:18px;
+    padding:20px;
+    transition:.3s ease;
+
+}
+
+.employee-summary-box:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 12px 25px rgba(0,0,0,.08);
+
+}
+
+.employee-summary-box h5{
+
+    margin:0 0 10px;
+    font-size:13px;
+    font-weight:600;
+    color:#607D8B;
+
+}
+
+.employee-summary-box h3{
+
+    margin:0;
+    font-size:25px;
+    font-weight:800;
+    color:#003DA5;
+
+
+}
+
+.employee-dashboard-stat-icon,
+.employee-attendance-detail-icon,
+.employee-attendance-status-icon,
+.employee-widget-title i{
+
+    transition:.3s ease;
+
+}
+
+.employee-dashboard-stat-card:hover 
+.employee-dashboard-stat-icon{
+
+    transform:
+    rotate(-10deg)
+    scale(1.12);
+
+}
+
+.employee-attendance-detail-card:hover
+.employee-attendance-detail-icon{
+
+    transform:
+    scale(1.10);
+
+}
+
+.employee-activity-item:hover
+.employee-activity-icon{
+
+    transform:
+    scale(1.10);
+
+}
+
+.employee-widget a{
+
+    text-decoration:none;
+    color:#1565C0;
+    transition:.25s ease;
+
+}
+
+.employee-widget a:hover{
+
+    color:#003DA5;
+
+}
+
+.employee-dashboard-table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+.employee-dashboard-table th{
+
+    background:#F5F7FB;
+    padding:15px;
+    text-align:left;
+    font-size:13px;
+    font-weight:700;
+    color:#607D8B;
+
+}
+
+.employee-dashboard-table td{
+
+    padding:15px;
+
+    border-top:
+    1px solid #EDF1F7;
+
+    font-size:14px;
+    color:#455A64;
+
+}
+
+.employee-dashboard-table tbody tr{
+
+    transition:.25s ease;
+
+}
+
+.employee-dashboard-table tbody tr:hover{
+
+    background:#F8FBFF;
+
+}
+
+.employee-dashboard-btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:12px 20px;
+    border:none;
+    border-radius:12px;
+    background:#003DA5;
+    color:white;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s ease;
+
+}
+
+.employee-dashboard-btn:hover{
+
+    background:#1565C0;
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 10px 20px rgba(0,61,165,.25);
+
+}
+
+.employee-dashboard-btn i{
+
+    font-size:15px;
+
+}
+
+.employee-dashboard-btn.secondary{
+
+    background:#EEF4FF;
+    color:#003DA5;
+
+}
+
+.employee-dashboard-btn.secondary:hover{
+
+    background:#DCE8FF;
+
+}
+
+.employee-shadow{
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+}
+
+.employee-rounded{
+
+    border-radius:22px;
+
+}
+
+.employee-widget:nth-child(1){
+
+    animation-delay:.10s;
+
+}
+
+.employee-widget:nth-child(2){
+
+    animation-delay:.20s;
+
+}
+
+.employee-widget:nth-child(3){
+
+    animation-delay:.30s;
+
+}
+
+.employee-widget:nth-child(4){
+
+    animation-delay:.40s;
+
+}
+
+::-webkit-scrollbar{
+
+    width:9px;
+    height:9px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#EEF2F7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#B8C6DB;
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#8EA6C6;
+
+}
+
+::selection{
+
+    background:#003DA5;
+    color:#ffffff;
+
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+a:focus{
+
+    outline:none;
+
+}
+
+@media(max-width:992px){
+
+    .employee-dashboard-content{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .employee-dashboard-stats{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .employee-dashboard-header{
+
+        flex-direction:column;
+        align-items:flex-start;
+
+    }
+
+    .employee-dashboard-title h1{
+
+        font-size:28px;
+
+    }
+
+    .employee-dashboard-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .employee-info-row{
+
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+
+    }
+
+    .employee-dashboard-btn{
+
+        width:100%;
+
+    }
+
+    .employee-dashboard-table{
+
+        display:block;
+        overflow-x:auto;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .employee-widget{
+
+        border-radius:18px;
+
+    }
+
+    .employee-widget-body{
+
+        padding:18px;
+
+    }
+
+    .employee-summary-box{
+
+        padding:16px;
+
+    }
+
+    .employee-summary-box h3{
+
+        font-size:21px;
+
+    }
+
+    .employee-dashboard-table th,
+    .employee-dashboard-table td{
+
+        padding:12px;
+        font-size:13px;
+
+    }
+
+}
+
+.employee-payroll-summary{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+
+}
+
+.employee-payroll-summary-card{
+
+    background:#ffffff;
+    border:1px solid #edf1f7;
+    border-radius:20px;
+    padding:25px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    transition:.3s ease;
+    position:relative;
+    overflow:hidden;
+
+}
+
+.employee-payroll-summary-card::before{
+
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:5px;
+    height:100%;
+    background:#003DA5;
+
+}
+
+.employee-payroll-summary-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.10);
+
+}
+
+.employee-payroll-summary-icon{
+
+    width:60px;
+    height:60px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    flex-shrink:0;
+
+}
+
+.employee-payroll-summary-content span{
+
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    color:#78909C;
+    margin-bottom:6px;
+
+}
+
+.employee-payroll-summary-content h2{
+
+    margin:0;
+    font-size:24px;
+    font-weight:800;
+    color:#263238;
+
+}
+
+.employee-payroll-summary-card.period
+.employee-payroll-summary-icon{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-payroll-summary-card.net
+.employee-payroll-summary-icon{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-payroll-summary-card.gross
+.employee-payroll-summary-icon{
+
+    background:#FFF8E1;
+    color:#EF6C00;
+
+}
+
+.employee-payroll-summary-card.status
+.employee-payroll-summary-icon{
+
+    background:#EEF4FF;
+    color:#003DA5;
+
+}
+
+.employee-payroll-breakdown-container{
+
+    margin-top:30px;
+    padding:25px;
+    background:#F8FAFD;
+    border:1px solid #EDF1F7;
+    border-radius:20px;
+
+}
+
+.employee-payroll-breakdown-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+
+}
+
+.employee-payroll-breakdown-title{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+}
+
+.employee-payroll-breakdown-title i{
+
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-payroll-breakdown-title h4{
+
+    margin:0;
+    font-size:18px;
+    font-weight:800;
+    color:#263238;
+
+}
+
+.employee-payroll-status-text{
+
+    margin:0;
+
+}
+
+.employee-payroll-status-text.paid{
+
+    color:#2E7D32;
+
+}
+
+.employee-payroll-status-text.unpaid{
+
+    color:#C62828;
+
+}
+
+.employee-payroll-status-text.pending{
+
+    color:#EF6C00;
+
+}
+
+.employee-payroll-status-text.draft{
+
+    color:#1565C0;
+
+}
+
+.employee-payroll-status{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:7px 18px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+
+}
+
+.employee-payroll-status.paid{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-payroll-status.unpaid{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-payroll-status.pending{
+
+    background:#FFF8E1;
+    color:#EF6C00;
+
+}
+
+.employee-payroll-status.draft{
+
+    background:#EEF4FF;
+    color:#1565C0;
+
+}
+
+.employee-payroll-summary-card.status.paid 
+.employee-payroll-summary-icon{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-activity-badge.paid{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-payroll-summary-card.status.unpaid 
+.employee-payroll-summary-icon{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-activity-badge.unpaid{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-payroll-summary-card.status.pending 
+.employee-payroll-summary-icon{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-activity-badge.pending{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-payroll-summary-card.status.draft 
+.employee-payroll-summary-icon{
+
+    background:#ECEFF1;
+    color:#546E7A;
+
+}
+
+.employee-payroll-summary-card.status.generated 
+.employee-payroll-summary-icon{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-activity-badge.generated{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-activity-badge.draft{
+
+    background:#ECEFF1;
+    color:#546E7A;
+
+}
+
+.employee-payroll-details{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+
+}
+
+.employee-payroll-detail-box{
+
+    background:#ffffff;
+    border:1px solid #EDF1F7;
+    border-radius:18px;
+    padding:22px;
+
+}
+
+.employee-payroll-detail-box span{
+
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    color:#78909C;
+    margin-bottom:8px;
+
+}
+
+.employee-payroll-detail-box strong{
+
+    font-size:22px;
+    font-weight:800;
+    color:#003DA5;
+
+}
+
+.employee-payroll-detail-box.salary strong{
+
+    color:#1565C0;
+
+}
+
+.employee-payroll-detail-box.allowance strong{
+
+    color:#2E7D32;
+
+}
+
+.employee-payroll-detail-box.deduction strong{
+
+    color:#C62828;
+
+}
+
+@media(max-width:1200px){
+
+    .employee-payroll-summary{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .employee-payroll-summary{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .employee-payroll-details{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+.employee-payroll-period{
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:#37474F;
+    font-weight:600;
+
+}
+
+.employee-payroll-period i{
+
+    color:#1565C0;
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+            EMPLOYEE ATTENDANCE PAGE
+            PHASE 3 FINAL CSS PART 1/3
+
+            Matched Classes:
+            attendance.php
+
+========================================================== */
+
+
+/* ==========================================================
+                    ALERT MESSAGE
+========================================================== */
+
+
+.employee-alert{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:16px 20px;
+
+    margin-bottom:25px;
+
+    border-radius:16px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    animation:employeeDashboardFade .4s ease;
+
+}
+
+
+
+.employee-alert.success{
+
+    background:#E8F5E9;
+
+    color:#2E7D32;
+
+}
+
+
+
+.employee-alert.warning{
+
+    background:#FFF8E1;
+
+    color:#F57F17;
+
+}
+
+
+
+.employee-alert.danger{
+
+    background:#FDECEC;
+
+    color:#C62828;
+
+}
+
+
+
+
+
+
+/* ==========================================================
+                    DATE DISPLAY HEADER
+========================================================== */
+
+
+.attendance-date-display{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-end;
+
+    gap:5px;
+
+}
+
+
+
+.attendance-date-display div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#607D8B;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+
+.attendance-date-display div i{
+
+    color:#1565C0;
+
+}
+
+
+
+.attendance-date-display strong{
+
+    font-size:18px;
+
+    color:#263238;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+                MAIN ATTENDANCE CONTAINER
+========================================================== */
+
+
+.attendance-dashboard-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+                    LIVE MONITOR CARD
+========================================================== */
+
+
+.attendance-live-monitor{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    background:#FFFFFF;
+
+    border:1px solid #E5EAF2;
+
+
+    box-shadow:
+
+    0 12px 30px rgba(0,0,0,.06);
+
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+.attendance-live-monitor::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:7px;
+
+    height:100%;
+
+    background:#1565C0;
+
+}
+
+
+
+
+
+
+.live-monitor-icon{
+
+
+    width:85px;
+
+    height:85px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    border-radius:25px;
+
+
+    background:#E3F2FD;
+
+
+    color:#1565C0;
+
+
+    font-size:36px;
+
+
+    flex-shrink:0;
+
+
+}
+
+
+
+
+
+
+.live-monitor-content span{
+
+
+    color:#78909C;
+
+
+    font-size:14px;
+
+
+    font-weight:600;
+
+
+}
+
+
+
+
+
+.live-monitor-content h2{
+
+
+    margin:5px 0 20px;
+
+
+    font-size:32px;
+
+
+    font-weight:800;
+
+
+    color:#263238;
+
+
+}
+
+
+
+
+
+
+.live-timer-grid{
+
+
+    display:flex;
+
+
+    gap:20px;
+
+
+    flex-wrap:wrap;
+
+
+}
+
+
+
+
+
+.live-timer-grid div{
+
+
+    min-width:160px;
+
+
+    padding:15px 20px;
+
+
+    border-radius:16px;
+
+
+    background:#F8FAFD;
+
+
+}
+
+
+
+
+
+.live-timer-grid label{
+
+
+    display:block;
+
+
+    margin-bottom:5px;
+
+
+    color:#607D8B;
+
+
+    font-size:12px;
+
+
+    font-weight:600;
+
+
+}
+
+
+
+
+
+.live-timer-grid strong{
+
+
+    color:#263238;
+
+
+    font-size:20px;
+
+
+    font-weight:800;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+                    STATUS CARD
+========================================================== */
+
+
+.attendance-status-card{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:22px;
+
+
+    padding:28px;
+
+
+    border-radius:22px;
+
+
+    background:
+
+
+    linear-gradient(
+
+        135deg,
+
+        #F5F9FF,
+
+        #FFFFFF
+
+    );
+
+
+
+    border:1px solid #EDF1F7;
+
+
+
+    box-shadow:
+
+
+    0 10px 25px rgba(0,0,0,.06);
+
+
+}
+
+
+
+
+
+.attendance-status-card.success{
+
+
+    border-left:6px solid #2E7D32;
+
+
+}
+
+
+
+.attendance-status-card.warning{
+
+
+    border-left:6px solid #F9A825;
+
+
+}
+
+
+
+.attendance-status-card.primary{
+
+
+    border-left:6px solid #1565C0;
+
+
+}
+
+
+
+
+
+
+.attendance-status-icon{
+
+
+    width:80px;
+
+
+    height:80px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-radius:22px;
+
+
+    background:#E3F2FD;
+
+
+    color:#1565C0;
+
+
+    font-size:34px;
+
+
+}
+
+
+
+
+
+
+.attendance-status-card.success 
+.attendance-status-icon{
+
+
+    background:#E8F5E9;
+
+
+    color:#2E7D32;
+
+
+}
+
+
+
+
+
+.attendance-status-card.warning 
+.attendance-status-icon{
+
+
+    background:#FFF8E1;
+
+
+    color:#F9A825;
+
+
+}
+
+
+
+
+
+.attendance-status-content span{
+
+
+    color:#607D8B;
+
+
+    font-size:14px;
+
+
+    font-weight:600;
+
+
+}
+
+
+
+
+
+.attendance-status-content h2{
+
+
+    margin:5px 0;
+
+
+    font-size:32px;
+
+
+    font-weight:800;
+
+
+    color:#263238;
+
+
+}
+
+
+
+
+
+.attendance-status-content p{
+
+
+    margin:0;
+
+
+    color:#78909C;
+
+
+}
+
+/* ==========================================================
+                PHASE 3 FINAL CSS PART 2/3
+
+                TIME DETAILS
+                SUMMARY
+                ACTION BUTTONS
+
+========================================================== */
+
+
+
+
+
+
+/* ==========================================================
+                TIME DETAILS SECTION
+========================================================== */
+
+
+.attendance-detail-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:repeat(4,1fr);
+
+
+    gap:18px;
+
+
+}
+
+
+
+
+
+.attendance-detail-card{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:15px;
+
+
+    padding:22px;
+
+
+    background:#FFFFFF;
+
+
+    border:1px solid #EDF1F7;
+
+
+    border-radius:18px;
+
+
+    transition:.3s ease;
+
+
+}
+
+
+
+
+
+.attendance-detail-card:hover{
+
+
+    transform:translateY(-5px);
+
+
+    box-shadow:
+
+
+    0 12px 25px rgba(0,0,0,.08);
+
+
+}
+
+
+
+
+
+.attendance-detail-icon{
+
+
+    width:60px;
+
+
+    height:60px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-radius:18px;
+
+
+    font-size:24px;
+
+
+    flex-shrink:0;
+
+
+}
+
+
+
+
+
+/* TIME IN */
+
+
+.attendance-detail-icon.timein{
+
+
+    background:#E3F2FD;
+
+
+    color:#1565C0;
+
+
+}
+
+
+
+
+
+/* BREAK OUT / BREAK IN */
+
+
+.attendance-detail-icon.break{
+
+
+    background:#FFF8E1;
+
+
+    color:#F9A825;
+
+
+}
+
+
+
+
+
+/* TIME OUT */
+
+
+.attendance-detail-icon.timeout{
+
+
+    background:#FDECEC;
+
+
+    color:#C62828;
+
+
+}
+
+
+
+
+
+.attendance-detail-card span{
+
+
+    display:block;
+
+
+    color:#78909C;
+
+
+    font-size:13px;
+
+
+    font-weight:600;
+
+
+    margin-bottom:5px;
+
+
+}
+
+
+
+
+
+.attendance-detail-card strong{
+
+
+    color:#263238;
+
+
+    font-size:22px;
+
+
+    font-weight:800;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+                SUMMARY SECTION
+========================================================== */
+
+
+.attendance-summary-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:repeat(4,1fr);
+
+
+    gap:18px;
+
+
+}
+
+
+
+
+
+
+.attendance-summary-card{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:18px;
+
+
+    padding:22px;
+
+
+    background:#FFFFFF;
+
+
+    border-radius:18px;
+
+
+    border:1px solid #EDF1F7;
+
+
+    box-shadow:
+
+
+    0 8px 20px rgba(0,0,0,.05);
+
+
+    transition:.3s ease;
+
+
+}
+
+
+
+
+
+.attendance-summary-card:hover{
+
+
+    transform:translateY(-4px);
+
+
+    box-shadow:
+
+
+    0 12px 25px rgba(0,0,0,.08);
+
+
+}
+
+
+
+
+
+
+
+.attendance-summary-card i{
+
+
+    width:55px;
+
+
+    height:55px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-radius:16px;
+
+
+    font-size:23px;
+
+
+}
+
+
+
+
+
+
+/* WORKING HOURS */
+
+
+.attendance-summary-card:nth-child(1) i{
+
+
+    background:#E3F2FD;
+
+
+    color:#1565C0;
+
+
+}
+
+
+
+
+
+
+
+/* REMAINING */
+
+
+.attendance-summary-card:nth-child(2) i{
+
+
+    background:#FFF8E1;
+
+
+    color:#F9A825;
+
+
+}
+
+
+
+
+
+
+
+/* OVERTIME */
+
+
+.attendance-summary-card:nth-child(3) i{
+
+
+    background:#E8F5E9;
+
+
+    color:#2E7D32;
+
+
+}
+
+
+
+
+
+
+
+/* UNDERTIME */
+
+
+.attendance-summary-card:nth-child(4) i{
+
+
+    background:#FDECEC;
+
+
+    color:#C62828;
+
+
+}
+
+
+
+
+
+
+.attendance-summary-card span{
+
+
+    display:block;
+
+
+    color:#78909C;
+
+
+    font-size:13px;
+
+
+    font-weight:600;
+
+
+    margin-bottom:5px;
+
+
+}
+
+
+
+
+
+.attendance-summary-card strong{
+
+
+    color:#263238;
+
+
+    font-size:22px;
+
+
+    font-weight:800;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+                ACTION BUTTON SECTION
+========================================================== */
+
+
+.attendance-action-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    text-align:center;
+
+}
+
+
+
+
+
+
+
+
+/* BUTTON BASE */
+
+
+.employee-dashboard-btn{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    gap:10px;
+
+
+    min-width:160px;
+
+
+    padding:14px 25px;
+
+
+    border:none;
+
+
+    border-radius:14px;
+
+
+    color:#FFFFFF;
+
+
+    font-size:14px;
+
+
+    font-weight:700;
+
+
+    cursor:pointer;
+
+
+    transition:.3s ease;
+
+
+}
+
+
+
+
+
+.employee-dashboard-btn:hover{
+
+
+    transform:translateY(-3px);
+
+
+}
+
+
+
+
+
+
+
+.employee-dashboard-btn:disabled{
+
+
+    cursor:not-allowed;
+
+
+    opacity:.45;
+
+
+    transform:none;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+                SPECIFIC ATTENDANCE BUTTONS
+========================================================== */
+
+
+
+
+
+.attendance-timein-btn{
+
+
+    background:#2E7D32;
+
+
+}
+
+
+
+
+
+
+.attendance-timein-btn:hover{
+
+
+    background:#1B5E20;
+
+
+}
+
+
+
+
+
+
+
+
+.attendance-break-btn{
+
+
+    background:#F9A825;
+
+
+}
+
+
+
+
+
+
+.attendance-break-btn:hover{
+
+
+    background:#F57F17;
+
+
+}
+
+
+
+
+
+
+
+
+.attendance-breakin-btn{
+
+
+    background:#1565C0;
+
+
+}
+
+
+
+
+
+
+.attendance-breakin-btn:hover{
+
+
+    background:#0D47A1;
+
+
+}
+
+
+
+
+
+
+
+
+.attendance-timeout-btn{
+
+
+    background:#C62828;
+
+
+}
+
+
+
+
+
+
+.attendance-timeout-btn:hover{
+
+
+    background:#8E0000;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+                BUTTON MESSAGE
+========================================================== */
+
+
+.attendance-button-message{
+
+    width:160px;
+
+    text-align:center;
+
+    color:#78909C;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    line-height:1.4;
+
+}
+
+.attendance-button-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    gap:8px;
+
+}
+
+/* ==========================================================
+                PHASE 3 FINAL CSS PART 3/3
+
+                TIMELINE
+                GUIDELINES
+                RESPONSIVE
+
+========================================================== */
+
+
+
+
+
+
+
+
+/* ==========================================================
+                ATTENDANCE TIMELINE
+========================================================== */
+
+
+.attendance-timeline-card{
+
+
+    background:#FFFFFF;
+
+
+    border:1px solid #EDF1F7;
+
+
+    border-radius:22px;
+
+
+    padding:28px;
+
+
+    box-shadow:
+
+
+    0 10px 25px rgba(0,0,0,.05);
+
+
+}
+
+
+
+
+
+
+.attendance-timeline-card h3{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:10px;
+
+
+    margin-bottom:25px;
+
+
+    color:#263238;
+
+
+    font-size:20px;
+
+
+    font-weight:800;
+
+
+}
+
+
+
+
+
+.attendance-timeline-card h3 i{
+
+
+    color:#1565C0;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+                EMPTY TIMELINE
+========================================================== */
+
+
+.timeline-empty{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    padding:35px;
+
+
+    color:#90A4AE;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+.timeline-empty i{
+
+
+    font-size:45px;
+
+
+    margin-bottom:15px;
+
+
+    color:#B0BEC5;
+
+
+}
+
+
+
+
+
+.timeline-empty p{
+
+
+    margin:0;
+
+
+    font-size:14px;
+
+
+    font-weight:600;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+                TIMELINE LIST
+========================================================== */
+
+
+.attendance-timeline-list{
+
+
+    list-style:none;
+
+
+    padding:0;
+
+
+    margin:0;
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+.attendance-timeline-list::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    left:24px;
+
+
+    top:10px;
+
+
+    bottom:10px;
+
+
+    width:2px;
+
+
+    background:#E3EAF2;
+
+
+}
+
+
+
+
+
+
+
+
+.attendance-timeline-list li{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:18px;
+
+
+    position:relative;
+
+
+    padding:15px 0;
+
+
+}
+
+
+
+
+
+
+
+.timeline-icon{
+
+
+    width:50px;
+
+
+    height:50px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-radius:50%;
+
+
+    background:#E8F5E9;
+
+
+    color:#2E7D32;
+
+
+    font-size:18px;
+
+
+    z-index:1;
+
+
+    flex-shrink:0;
+
+
+}
+
+
+
+
+
+
+
+
+.timeline-content{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:5px;
+
+
+}
+
+
+
+
+
+
+
+
+.timeline-content strong{
+
+
+    color:#263238;
+
+
+    font-size:15px;
+
+
+    font-weight:700;
+
+
+}
+
+
+
+
+
+.timeline-content span{
+
+
+    color:#78909C;
+
+
+    font-size:13px;
+
+
+    font-weight:600;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+                ATTENDANCE GUIDELINES CARD
+========================================================== */
+
+
+.attendance-info-card{
+
+
+    display:flex;
+
+
+    align-items:flex-start;
+
+
+    gap:18px;
+
+
+    padding:25px;
+
+
+    border-radius:20px;
+
+
+    background:
+
+
+    linear-gradient(
+
+        135deg,
+
+        #F5F9FF,
+
+        #FFFFFF
+
+    );
+
+
+
+    border:1px solid #E3EAF2;
+
+
+}
+
+
+
+
+
+
+
+
+.attendance-info-icon{
+
+
+    width:60px;
+
+
+    height:60px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-radius:18px;
+
+
+    background:#E3F2FD;
+
+
+    color:#1565C0;
+
+
+    font-size:26px;
+
+
+    flex-shrink:0;
+
+
+}
+
+
+
+
+
+
+
+
+.attendance-info-content h4{
+
+
+    margin:0 0 10px;
+
+
+    color:#263238;
+
+
+    font-size:18px;
+
+
+    font-weight:800;
+
+
+}
+
+
+
+
+
+.attendance-info-content p{
+
+
+    margin:0;
+
+
+    color:#607D8B;
+
+
+    line-height:1.8;
+
+
+    font-size:14px;
+
+
+    font-weight:500;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+                RESPONSIVE DESIGN
+========================================================== */
+
+
+
+
+
+@media(max-width:1200px){
+
+
+
+    .attendance-detail-grid{
+
+
+        grid-template-columns:repeat(2,1fr);
+
+
+    }
+
+
+
+
+
+    .attendance-summary-grid{
+
+
+        grid-template-columns:repeat(2,1fr);
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+@media(max-width:900px){
+
+
+
+    .attendance-live-monitor{
+
+
+        flex-direction:column;
+
+
+        align-items:flex-start;
+
+
+    }
+
+
+
+
+    .attendance-status-card{
+
+
+        flex-direction:column;
+
+
+        align-items:flex-start;
+
+
+    }
+
+
+
+
+    .attendance-date-display{
+
+
+        align-items:flex-start;
+
+
+        margin-top:15px;
+
+
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+@media(max-width:768px){
+
+
+
+    .attendance-detail-grid,
+
+
+    .attendance-summary-grid{
+
+
+        grid-template-columns:1fr;
+
+
+    }
+
+
+
+
+
+    .live-timer-grid{
+
+
+        flex-direction:column;
+
+
+        width:100%;
+
+
+    }
+
+
+
+
+
+    .live-timer-grid div{
+
+
+        width:100%;
+
+
+    }
+
+
+
+
+
+
+    .attendance-action-container{
+
+
+        flex-direction:column;
+
+
+        width:100%;
+
+
+    }
+
+
+
+
+
+
+    .employee-dashboard-btn{
+
+
+        width:100%;
+
+
+    }
+
+
+
+
+
+
+    .attendance-info-card{
+
+
+        flex-direction:column;
+
+
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+@media(max-width:576px){
+
+
+
+    .attendance-live-monitor{
+
+
+        padding:20px;
+
+
+    }
+
+
+
+
+
+    .live-monitor-content h2,
+
+
+    .attendance-status-content h2{
+
+
+        font-size:25px;
+
+
+    }
+
+
+
+
+
+    .attendance-detail-card{
+
+
+        padding:18px;
+
+
+    }
+
+
+
+
+
+    .attendance-detail-card strong{
+
+
+        font-size:18px;
+
+
+    }
+
+
+
+
+
+    .attendance-summary-card strong{
+
+
+        font-size:18px;
+
+
+    }
+
+
+
+
+}
+
+/* ==========================================================
+                BUTTON ROW
+========================================================== */
+
+
+.attendance-buttons-row{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+
+
+
+.attendance-buttons-row form{
+
+    margin:0;
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+                BUTTON MESSAGES
+========================================================== */
+
+
+.attendance-button-messages{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    margin-top:15px;
+
+    text-align:center;
+
+}
+
+
+
+
+
+.attendance-button-messages div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#78909C;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+
+.attendance-button-messages i{
+
+    color:#1565C0;
+
+}
+
+
+/*
+=====================================================
+        OVERTIME & HALF DAY BUTTON
+=====================================================
+*/
+
+
+.attendance-ot-btn,
+.attendance-halfday-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+
+}
+
+
+
+/*
+=====================================================
+        OVERTIME BUTTON
+=====================================================
+*/
+
+
+.attendance-ot-btn {
+
+    background: #1565C0;
+
+    color: #ffffff;
+
+}
+
+
+
+.attendance-ot-btn:hover:not(:disabled) {
+
+    background: #0D47A1;
+
+    transform: translateY(-2px);
+
+}
+
+
+
+
+
+
+/*
+=====================================================
+        HALF DAY BUTTON
+=====================================================
+*/
+
+
+.attendance-halfday-btn {
+
+    background: #FFC107;
+
+    color: #263238;
+
+}
+
+
+
+.attendance-halfday-btn:hover:not(:disabled) {
+
+    background: #FFB300;
+
+    transform: translateY(-2px);
+
+}
+
+
+
+
+
+
+
+/*
+=====================================================
+        DISABLED STATE
+=====================================================
+*/
+
+
+.attendance-ot-btn:disabled,
+.attendance-halfday-btn:disabled {
+
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+
+
+
+
+/*
+=====================================================
+        BUTTON MESSAGE
+=====================================================
+*/
+
+
+.attendance-button-message {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    color: #607D8B;
+
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+==========================================================
+        EMPLOYEE ATTENDANCE HISTORY
+==========================================================
+*/
+.employee-attendance-history{
+
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+
+}
+
+.employee-attendance-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.employee-attendance-header h1{
+
+    margin:0;
+    font-size:32px;
+    font-weight:800;
+    color:#003DA5;
+
+}
+
+.employee-attendance-header h1 i{
+
+    margin-right:10px;
+
+}
+
+.employee-attendance-header p{
+
+    margin-top:8px;
+    color:#607D8B;
+    font-size:15px;
+
+}
+
+.employee-attendance-summary{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+
+}
+
+.employee-attendance-card{
+
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    background:#ffffff;
+    padding:25px;
+    border-radius:22px;
+    border:1px solid #E8EDF5;
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+    transition:.35s ease;
+
+}
+
+.employee-attendance-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.employee-attendance-card::before{
+
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:6px;
+    height:100%;
+
+}
+
+.employee-attendance-card.blue::before{
+
+    background:#1565C0;
+
+}
+
+.employee-attendance-card.orange::before{
+
+    background:#F9A825;
+
+}
+
+.employee-attendance-card.green::before{
+
+    background:#2E7D32;
+
+}
+
+.employee-attendance-card.red::before{
+
+    background:#C62828;
+
+}
+
+.employee-attendance-icon{
+
+    width:72px;
+    height:72px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:20px;
+    font-size:30px;
+    flex-shrink:0;
+    transition:.35s;
+
+}
+
+.employee-attendance-card.blue
+.employee-attendance-icon{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-attendance-card.orange
+.employee-attendance-icon{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-attendance-card.green
+.employee-attendance-icon{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-attendance-card.red
+.employee-attendance-icon{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-attendance-card:hover
+.employee-attendance-icon{
+
+    transform:rotate(8deg) scale(1.08);
+
+}
+
+.employee-attendance-content{
+
+    flex:1;
+
+}
+
+.employee-attendance-content span{
+
+    display:block;
+    font-size:14px;
+    font-weight:700;
+    color:#607D8B;
+
+}
+
+.employee-attendance-content h2{
+
+    margin:6px 0;
+    font-size:34px;
+    color:#263238;
+    font-weight:800;
+
+}
+
+.employee-attendance-content p{
+
+    margin:0;
+    color:#90A4AE;
+    font-size:13px;
+
+}
+
+.employee-attendance-filter-card{
+
+    background:#fff;
+    border-radius:22px;
+    padding:24px;
+    margin-bottom:28px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+}
+
+.employee-attendance-filter-grid{
+
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+
+}
+
+.employee-attendance-filter-group{
+
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+
+}
+
+.employee-attendance-filter-group label{
+
+    font-size:13px;
+    font-weight:700;
+    color:#455A64;
+
+}
+
+.employee-attendance-filter-group input,
+.employee-attendance-filter-group select{
+
+    width:100%;
+    padding:12px 15px;
+    border-radius:12px;
+    border:1px solid #DCE4EC;
+    background:#F8FAFC;
+    outline:none;
+
+}
+
+.employee-attendance-filter-group input:focus,
+.employee-attendance-filter-group select:focus{
+
+    border-color:#003DA5;
+
+    box-shadow:
+    0 0 0 4px rgba(0,61,165,.08);
+
+}
+
+.employee-attendance-search-btn{
+
+    width:100%;
+    height:48px;
+    margin-top:auto;
+    border:none;
+    border-radius:12px;
+    background:#003DA5;
+    color:#fff;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.employee-attendance-search-btn:hover{
+
+    background:#0D47A1;
+    transform:translateY(-2px);
+
+}
+
+.employee-attendance-buttons{
+
+    display:flex;
+    gap:14px;
+    margin-top:25px;
+
+}
+
+.employee-attendance-btn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    height:48px;
+    padding:0 22px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:700;
+    transition:.25s;
+
+}
+
+.employee-attendance-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.employee-attendance-btn.pdf{
+
+    background:#FFF0F0;
+    color:#D32F2F;
+    border:2px solid #F5B5B5;
+
+}
+
+.employee-attendance-btn.pdf:hover{
+
+    background:#D32F2F;
+    color:white;
+
+}
+
+.employee-attendance-btn.reset{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-attendance-btn.reset:hover{
+
+    background:#1565C0;
+    color:white;
+
+}
+
+.employee-attendance-table-card{
+
+    background:#ffffff;
+    border-radius:22px;
+    border:1px solid #EDF1F7;
+    padding:25px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+    min-height:620px;
+    height:620px;
+    display:flex;
+    flex-direction:column;
+
+}
+
+.employee-attendance-table-wrapper{
+
+    flex:1;
+    overflow:auto;
+
+}
+
+.employee-attendance-table{
+
+    width:100%;
+    min-width:1350px;
+    border-collapse:collapse;
+
+}
+
+.employee-attendance-table thead{
+
+    position:sticky;
+    top:0;
+    z-index:20;
+
+}
+
+.employee-attendance-table th{
+
+    background:#F5F7FB;
+    padding:16px;
+    text-align:left;
+    color:#003DA5;
+    font-size:13px;
+
+}
+
+.employee-attendance-table td{
+
+    padding:16px;
+    border-bottom:1px solid #EDF1F7;
+    color:#455A64;
+    vertical-align:middle;
+
+}
+
+.employee-attendance-table tbody tr:hover{
+
+    background:#F8FBFF;
+
+}
+
+.employee-status-badge,
+.employee-worktype-badge,
+.employee-hours-badge,
+.employee-overtime-badge,
+.employee-undertime-badge{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    padding:7px 14px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+
+}
+
+.employee-status-badge.present{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-status-badge.late{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-status-badge.leave{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-status-badge.absent{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-status-badge.holiday{
+
+    background:#E8EAF6;
+    color:#3949AB;
+
+}
+
+.employee-status-badge.halfday{
+
+    background:#FFF3E0;
+    color:#EF6C00;
+
+}
+
+.employee-worktype-badge.regular{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-worktype-badge.holiday{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-worktype-badge.restday{
+
+    background:#F3E5F5;
+    color:#7B1FA2;
+
+}
+
+.employee-hours-badge{
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 16px;
+    border-radius:25px;
+    background:#E8F5E9;
+    color:#2E7D32;
+    font-size:13px;
+    font-weight:700;
+
+}
+
+.employee-hours-badge i{
+
+    font-size:14px;
+
+}
+
+.employee-overtime-badge{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-undertime-badge{
+
+    background:#FFF3E0;
+    color:#D32F2F;
+
+}
+
+.employee-no-overtime,
+.employee-no-undertime,
+.employee-no-remarks{
+
+    color:#90A4AE;
+    font-style:italic;
+
+}
+
+.employee-break-wrapper{
+
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+
+}
+
+.employee-break-out,
+.employee-break-in{
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    width:fit-content;
+    padding:7px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:700;
+
+}
+
+.employee-break-out{
+
+    background:#FFF3E0;
+    color:#EF6C00;
+
+}
+
+.employee-break-in{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-break-out i,
+.employee-break-in i{
+
+    font-size:13px;
+
+}
+
+.employee-attendance-empty{
+
+    height:520px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.employee-attendance-empty i{
+
+    font-size:60px;
+    color:#CBD5E1;
+    margin-bottom:18px;
+
+}
+
+.employee-attendance-empty h3{
+
+    margin:0;
+    color:#003DA5;
+    font-size:24px;
+    font-weight:800;
+
+}
+
+.employee-attendance-empty p{
+
+    margin-top:10px;
+    color:#78909C;
+
+}
+
+.employee-attendance-table-wrapper::-webkit-scrollbar{
+
+    width:10px;
+    height:10px;
+
+}
+
+.employee-attendance-table-wrapper::-webkit-scrollbar-thumb{
+
+    background:#C5D1E0;
+    border-radius:20px;
+
+}
+
+.employee-attendance-table-wrapper::-webkit-scrollbar-thumb:hover{
+
+    background:#90A4AE;
+
+}
+
+@media(max-width:1200px){
+
+    .employee-attendance-summary{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .employee-attendance-filter-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .employee-attendance-summary{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .employee-attendance-filter-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .employee-attendance-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .employee-attendance-btn{
+
+        width:100%;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+                EMPLOYEE MY PAYROLL
+========================================================== */
+.employee-payroll-page{
+
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+
+}
+
+.employee-payroll-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.employee-payroll-header h1{
+
+    margin:0;
+    color:#003DA5;
+    font-size:32px;
+    font-weight:800;
+
+}
+
+.employee-payroll-header h1 i{
+
+    margin-right:10px;
+
+}
+
+.employee-payroll-header p{
+
+    margin-top:8px;
+    color:#607D8B;
+    font-size:15px;
+
+}
+
+.employee-payroll-summary{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+
+}
+
+.employee-payroll-card{
+
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    background:linear-gradient(
+        135deg,
+        #ffffff,
+        #F8FBFF
+    );
+
+    padding:25px;
+    border-radius:22px;
+    border:1px solid #e8edf5;
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+    transition:.35s ease;
+
+}
+
+.employee-payroll-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.employee-payroll-card::before{
+
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:6px;
+    height:100%;
+
+}
+
+.employee-payroll-card.blue::before{
+
+    background:#1565C0;
+
+}
+
+.employee-payroll-card.green::before{
+
+    background:#2E7D32;
+
+}
+
+.employee-payroll-card.orange::before{
+
+    background:#F9A825;
+
+}
+
+.employee-payroll-card.gold::before{
+
+    background:#FFC107;
+
+}
+
+.employee-payroll-icon{
+
+    width:72px;
+    height:72px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:20px;
+    font-size:30px;
+    flex-shrink:0;
+    transition:.35s ease;
+
+}
+
+.employee-payroll-card.blue 
+.employee-payroll-icon{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-payroll-card.green 
+.employee-payroll-icon{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-payroll-card.orange 
+.employee-payroll-icon{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-payroll-card.gold 
+.employee-payroll-icon{
+
+    background:#FFF8E1;
+    color:#FFC107;
+
+}
+
+.employee-payroll-card:hover 
+.employee-payroll-icon{
+
+    transform:
+    rotate(8deg)
+    scale(1.1);
+
+}
+
+.employee-payroll-content{
+
+    flex:1;
+
+}
+
+.employee-payroll-content span{
+
+    display:block;
+    font-size:14px;
+    font-weight:700;
+    color:#607D8B;
+    margin-bottom:8px;
+
+}
+
+.employee-payroll-filter-card::before{
+
+    content:"Payroll Filter";
+    display:block;
+    color:#003DA5;
+    font-size:18px;
+    font-weight:800;
+    margin-bottom:20px;
+
+}
+
+.employee-payroll-content h2{
+
+    margin:0;
+    font-size:32px;
+    font-weight:900;
+    letter-spacing:.3px;
+    color:#263238;
+
+}
+
+.employee-payroll-content p{
+
+    margin-top:8px;
+    color:#90A4AE;
+    font-size:13px;
+
+}
+
+.employee-payroll-filter-card{
+
+    background:#ffffff;
+    padding:25px;
+    border-radius:22px;
+    border:1px solid #edf1f7;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+}
+
+.employee-payroll-filter-grid{
+
+    display:grid;
+    grid-template-columns:1fr 1fr auto;
+    gap:18px;
+    align-items:end;
+
+}
+
+.employee-payroll-filter-group{
+
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+
+}
+
+.employee-payroll-filter-group label{
+
+    font-size:13px;
+    font-weight:700;
+    color:#455A64;
+
+}
+
+.employee-payroll-filter-group select{
+
+    padding:12px 15px;
+    border-radius:12px;
+    border:1px solid #DCE4EC;
+    background:#F8FAFC;
+    outline:none;
+
+}
+
+.employee-payroll-filter-group select:focus{
+
+    background:white;
+    border-color:#003DA5;
+
+    box-shadow:
+    0 0 0 4px rgba(0,61,165,.08);
+
+}
+
+.employee-payroll-search-btn{
+
+    height:45px;
+    padding:0 28px;
+    border:none;
+    cursor:pointer;
+    border-radius:12px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:#003DA5;
+    color:white;
+    transition:.3s;
+
+}
+
+.employee-payroll-filter-group:last-child{
+
+    justify-content:flex-end;
+
+}
+
+.employee-payroll-search-btn:hover{
+
+    background:#002B75;
+    transform:translateY(-3px);
+
+}
+
+.employee-payroll-info-card{
+
+    background:white;
+    padding:25px;
+    border-radius:22px;
+    border:1px solid #edf1f7;
+    min-height:300px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+}
+
+.employee-payroll-info-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+
+}
+
+.employee-payroll-info-header h2{
+
+    margin:0;
+    color:#003DA5;
+    font-size:22px;
+
+}
+
+.employee-payroll-status{
+
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+
+}
+
+.employee-payroll-status.paid{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-payroll-status.generated{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-payroll-status.draft{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-payroll-details{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+
+}
+
+.employee-payroll-details div{
+
+    background:#F8FAFC;
+    padding:18px;
+    border-radius:15px;
+
+}
+
+.employee-payroll-details label{
+
+    color:#607D8B;
+    font-size:13px;
+    font-weight:700;
+
+}
+
+.employee-payroll-details p{
+
+    margin:5px 0 0;
+    color:#263238;
+    font-size:15px;
+    font-weight:700;
+
+}
+
+.employee-payroll-table-card{
+
+    background:white;
+    padding:30px;
+    border-radius:22px;
+    border:1px solid #edf1f7;
+    min-height:420px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+}
+
+.employee-payroll-table-header h2{
+
+    margin:0;
+    color:#003DA5;
+
+}
+
+.employee-payroll-table-header p{
+
+    margin-top:8px;
+    color:#607D8B;
+    font-size:14px;
+
+}
+
+.employee-payroll-table-wrapper{
+
+    width:100%;
+    height:300px;
+    overflow-y:auto;
+    overflow-x:auto;
+    margin-top:20px;
+    border-radius:15px;
+
+}
+
+.employee-payroll-table-wrapper::-webkit-scrollbar{
+
+    width:8px;
+    height:8px;
+
+}
+
+.employee-payroll-table-wrapper::-webkit-scrollbar-track{
+
+    background:#F1F5F9;
+
+    border-radius:20px;
+
+}
+
+.employee-payroll-table-wrapper::-webkit-scrollbar-thumb{
+
+    background:#003DA5;
+
+    border-radius:20px;
+
+}
+
+.employee-payroll-table-wrapper::-webkit-scrollbar-thumb:hover{
+
+    background:#002B75;
+
+}
+
+.employee-payroll-table{
+
+    width:100%;
+    min-width:1000px;
+    border-collapse:collapse;
+
+}
+
+.employee-payroll-table thead{
+
+    position:sticky;
+    top:0;
+    z-index:5;
+
+}
+
+.employee-payroll-table th{
+
+    background:#F5F7FB;
+    padding:16px;
+    color:#003DA5;
+    font-size:13px;
+    text-align:left;
+
+}
+
+.employee-payroll-table td{
+
+    padding:16px;
+    border-bottom:1px solid #EDF1F7;
+    color:#455A64;
+
+}
+
+.employee-payroll-table tbody tr:hover{
+
+    background:#F8FBFF;
+
+}
+
+.employee-allowance-badge{
+
+    color:#2E7D32;
+    font-weight:700;
+
+}
+
+.employee-deduction-badge{
+
+    color:#C62828;
+    font-weight:700;
+
+}
+
+.employee-net-pay{
+
+    color:#003DA5;
+
+}
+
+.employee-payroll-actions{
+
+    display:flex;
+    gap:10px;
+
+}
+
+.employee-payroll-view-btn,
+.employee-payroll-pdf-btn{
+
+    border:none;
+    cursor:pointer;
+    padding:10px 16px;
+    border-radius:12px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+}
+
+.employee-payroll-view-btn{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-payroll-pdf-btn{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-no-payslip{
+
+    color:#90A4AE;
+    font-style:italic;
+
+}
+
+.employee-payroll-empty{
+
+    height:210px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.employee-payroll-empty i{
+
+    font-size:55px;
+    color:#CBD5E1;
+    margin-bottom:15px;
+
+}
+
+.employee-payroll-empty h3{
+
+    margin:0 0 10px;
+    color:#003DA5;
+    font-size:22px;
+
+}
+
+.employee-payroll-empty p{
+
+    color:#78909C;
+
+}
+
+.employee-payroll-footer{
+
+    margin-top:25px;
+    padding-top:15px;
+    border-top:1px solid #E5E7EB;
+    display:flex;
+    justify-content:space-between;
+    color:#78909C;
+    font-size:13px;
+
+}
+
+@media(max-width:1200px){
+
+    .employee-payroll-summary{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .employee-payroll-filter-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .employee-payroll-search-btn{
+
+        width:100%;
+
+    }
+
+    .employee-payroll-filter-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .employee-payroll-details{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .employee-payroll-actions{
+
+        flex-direction:column;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .employee-payroll-table-card{
+
+        padding:18px;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+==========================================================
+                 EMPLOYEE LEAVE REQUEST 
+==========================================================
+*/
+.employee-leave-request-page{
+
+    padding:30px;
+
+}
+
+.employee-leave-request-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+    border-left:6px solid #0D47A1;
+
+}
+
+.employee-leave-request-title h1{
+
+    margin:0;
+    font-size:30px;
+    font-weight:800;
+    color:#0D47A1;
+
+}
+
+.employee-leave-request-title h1 i{
+
+    color:#FFC107;
+    margin-right:10px;
+
+}
+
+.employee-leave-request-title p{
+
+    margin-top:10px;
+    color:#607D8B;
+    font-size:14px;
+
+}
+
+.employee-leave-request-history-btn{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#0D47A1;
+    color:white;
+    padding:13px 22px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+
+}
+
+.employee-leave-request-history-btn:hover{
+
+    background:#08306B;
+    transform:translateY(-2px);
+
+}
+
+.employee-leave-card{
+
+    background:white;
+    border-radius:22px;
+    padding:30px;
+    margin-bottom:25px;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.06);
+
+    border:1px solid #E8EDF5;
+
+}
+
+.employee-leave-card-header{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding-bottom:20px;
+    margin-bottom:25px;
+    border-bottom:1px solid #EDF1F7;
+
+}
+
+.employee-leave-card-icon{
+
+    width:50px;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#E3F2FD;
+    color:#0D47A1;
+    border-radius:15px;
+    font-size:22px;
+
+}
+
+.employee-leave-card-header h2{
+
+    margin:0;
+    color:#263238;
+    font-size:21px;
+    font-weight:800;
+
+}
+
+.employee-leave-card-header p{
+
+    margin:5px 0 0;
+    color:#78909C;
+    font-size:13px;
+
+}
+
+.employee-leave-info-grid{
+
+    display:grid;
+    grid-template-columns:
+    repeat(2,1fr);
+    gap:20px;
+
+}
+
+.employee-leave-info-item{
+
+    background:#F8FAFC;
+    padding:18px;
+    border-radius:15px;
+    border:1px solid #E9EEF5;
+
+}
+
+.employee-leave-info-item label{
+
+    display:block;
+    color:#607D8B;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:8px;
+
+}
+
+.employee-leave-info-item label i{
+
+    color:#0D47A1;
+    margin-right:8px;
+
+}
+
+.employee-leave-info-item p{
+
+    margin:0;
+    font-size:16px;
+    font-weight:800;
+    color:#263238;
+
+}
+
+.employee-leave-form-grid{
+
+    display:grid;
+    grid-template-columns:
+    repeat(2,1fr);
+    gap:25px;
+
+}
+
+.employee-leave-form-group{
+
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+
+}
+
+.employee-leave-form-group label{
+
+    font-size:14px;
+    font-weight:700;
+    color:#37474F;
+
+}
+
+.employee-leave-form-group label i{
+
+    color:#0D47A1;
+    margin-right:8px;
+
+}
+
+.employee-leave-form-group label span{
+
+    color:#D32F2F;
+
+}
+
+.employee-leave-form-group input,
+.employee-leave-form-group select,
+.employee-leave-form-group textarea{
+
+    width:100%;
+    padding:14px 16px;
+    border-radius:12px;
+    border:1px solid #D7DEE8;
+    background:#FAFBFD;
+    font-size:14px;
+    outline:none;
+    transition:.3s;
+
+}
+
+.employee-leave-form-group textarea{
+
+    resize:none;
+
+}
+
+.employee-leave-form-group input:focus,
+.employee-leave-form-group select:focus,
+.employee-leave-form-group textarea:focus{
+
+    border-color:#0D47A1;
+    background:white;
+
+    box-shadow:
+    0 0 0 4px rgba(13,71,161,.12);
+
+}
+
+.input-error{
+
+    border:
+    2px solid #E53935!important;
+
+    background:#FFF5F5!important;
+
+}
+
+.employee-input-error{
+
+    min-height:18px;
+    color:#D32F2F;
+    font-size:12px;
+    font-weight:600;
+
+}
+
+.employee-leave-full-width{
+
+    width:100%;
+
+}
+
+.employee-leave-character-counter{
+
+    text-align:right;
+    margin-top:8px;
+    font-size:12px;
+    color:#78909C;
+
+}
+
+.employee-leave-character-counter span{
+
+    font-weight:800;
+    color:#0D47A1;
+
+}
+
+.employee-file-note{
+
+    margin-top:8px;
+    color:#78909C;
+    font-size:12px;
+
+}
+
+input[type="file"]{
+
+    background:#F8FAFC;
+    padding:12px;
+
+}
+
+.employee-leave-guidelines{
+
+    display:flex;
+    gap:20px;
+    padding:25px;
+    background:#FFF8E1;
+    border-left:6px solid #FFC107;
+    border-radius:18px;
+    margin-bottom:30px;
+
+}
+
+.employee-leave-guidelines-icon{
+
+    width:45px;
+    height:45px;
+    background:#FFC107;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+
+}
+
+.employee-leave-guidelines h4{
+
+    margin:0 0 10px;
+    color:#5D4037;
+    font-size:18px;
+
+}
+
+.employee-leave-guidelines ul{
+
+    margin:0;
+    padding-left:20px;
+
+}
+
+.employee-leave-guidelines li{
+
+    margin-bottom:8px;
+    color:#6D4C41;
+    font-size:14px;
+
+}
+
+.employee-leave-action-buttons{
+
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+    margin-top:25px;
+
+}
+
+.employee-leave-reset-btn,
+.employee-leave-submit-btn{
+
+    padding:14px 25px;
+    border:none;
+    border-radius:14px;
+    font-weight:800;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    transition:.3s;
+
+}
+
+.employee-leave-reset-btn{
+
+    background:#FFB300;
+    color:#263238;
+
+}
+
+.employee-leave-reset-btn:hover{
+
+    background:#FFC107;  
+
+}
+
+.employee-leave-submit-btn{
+
+    background:#0D47A1;
+    color:white;
+
+}
+
+.employee-leave-submit-btn:hover{
+
+    background:#08306B;
+    transform:translateY(-2px);
+
+}
+
+.input-error {
+    border: 2px solid #E53935 !important;
+    background: #fff5f5;
+}
+
+.employee-input-error {
+    display:block;
+    color:#E53935;
+    font-size:13px;
+    margin-top:6px;
+}
+
+@media(max-width:900px){
+
+.employee-leave-request-header{
+
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+
+}
+
+.employee-leave-form-grid,
+.employee-leave-info-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.employee-leave-action-buttons{
+
+    flex-direction:column;
+
+}
+
+.employee-leave-submit-btn,
+.employee-leave-reset-btn{
+
+    justify-content:center;
+    width:100%;
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+==========================================================
+            EMPLOYEE LEAVE HISTORY
+==========================================================
+*/
+.employee-leave-history-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin-bottom:30px;
+
+}
+
+.employee-leave-history-title h1{
+
+    margin:0;
+    color:#003DA5;
+    font-size:32px;
+    font-weight:800;
+
+}
+
+.employee-leave-history-title h1 i{
+
+    margin-right:10px;
+
+}
+
+.employee-leave-history-title p{
+
+    margin-top:8px;
+    color:#607D8B;
+    font-size:15px;
+
+}
+
+.employee-new-leave-btn{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#003DA5;
+    color:#ffffff;
+    padding:12px 20px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s ease;
+
+}
+
+.employee-new-leave-btn:hover{
+
+    background:#0D47A1;
+    transform:translateY(-2px);
+
+}
+
+.employee-leave-summary-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+    margin-bottom:35px;
+
+}
+
+.employee-leave-summary-card{
+
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    background:#ffffff;
+    padding:25px;
+    border-radius:22px;
+    border:1px solid #e8edf5;
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+    transition:.35s ease;
+
+}
+
+.employee-leave-summary-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.employee-leave-summary-card::before{
+
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:6px;
+    height:100%;
+
+}
+
+.employee-leave-summary-card.blue::before{
+
+    background:#1565C0;
+
+}
+
+.employee-leave-summary-card.orange::before{
+
+    background:#F9A825;
+
+}
+
+.employee-leave-summary-card.green::before{
+
+    background:#2E7D32;
+
+}
+
+.employee-leave-summary-card.red::before{
+
+    background:#C62828;
+
+}
+
+.employee-summary-icon{
+
+    width:72px;
+    height:72px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-shrink:0;
+    border-radius:20px;
+    font-size:30px;
+    transition:.35s ease;
+
+}
+
+.employee-leave-summary-card.blue
+.employee-summary-icon{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-leave-summary-card.orange
+.employee-summary-icon{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-leave-summary-card.green
+.employee-summary-icon{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-leave-summary-card.red
+.employee-summary-icon{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-leave-summary-card:hover
+.employee-summary-icon{
+
+    transform:
+    rotate(-8deg)
+    scale(1.1);
+
+}
+
+.employee-summary-content{
+
+    flex:1;
+
+}
+
+.employee-summary-content span{
+
+    display:block;
+    color:#607D8B;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:8px;
+
+}
+
+.employee-summary-content h2{
+
+    margin:0;
+    font-size:34px;
+    color:#263238;
+    font-weight:800;
+
+}
+
+.employee-summary-content p{
+
+    margin:8px 0 0;
+    color:#90A4AE;
+    font-size:13px;
+
+}
+
+.employee-leave-table-card{
+
+    background:#ffffff;
+    border-radius:22px;
+    border:1px solid #edf1f7;
+    padding:25px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+}
+
+.employee-leave-table-title h2{
+
+    margin:0;
+    color:#003DA5;
+    font-size:26px;
+    font-weight:800;
+
+}
+
+.employee-leave-table-title h2 i{
+
+    margin-right:10px;
+
+}
+
+.employee-leave-table-title p{
+
+    margin-top:8px;
+    color:#607D8B;
+    font-size:15px;
+
+}
+
+.employee-leave-search{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin:25px 0;
+
+}
+
+.employee-leave-search-box{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+    width:400px;
+    background:#F5F7FB;
+    padding:12px 18px;
+    border-radius:14px;
+    transition:.3s;
+
+}
+
+.employee-leave-search-box:focus-within{
+
+    background:#ffffff;
+    border:1px solid #003DA5;
+
+    box-shadow:
+    0 0 0 4px rgba(0,61,165,.08);
+
+}
+
+.employee-leave-search-box i{
+
+    color:#003DA5;
+
+}
+
+.employee-leave-search-box input{
+
+    width:100%;
+    border:none;
+    outline:none;
+    background:none;
+    font-size:14px;
+
+}
+
+.employee-leave-filter-box select{
+
+    height:45px;
+    padding:0 18px;
+    border-radius:12px;
+    border:1px solid #D6E0EB;
+    background:#ffffff;
+    color:#455A64;
+    font-weight:600;
+    cursor:pointer;
+
+}
+
+.employee-leave-table-wrapper{
+
+    width:100%;
+    height:520px;
+    overflow:auto;
+
+}
+
+.employee-leave-table{
+
+    width:100%;
+    min-width:1100px;
+    border-collapse:collapse;
+
+}
+
+.employee-leave-table thead{
+
+    position:sticky;
+    top:0;
+    z-index:5;
+
+}
+
+.employee-leave-table th{
+
+    padding:16px;
+    background:#F5F7FB;
+    color:#003DA5;
+    font-size:13px;
+    font-weight:700;
+    text-align:left;
+
+}
+
+.employee-leave-table td{
+
+    padding:16px;
+    border-bottom:1px solid #EDF1F7;
+    color:#455A64;
+    font-size:14px;
+
+}
+
+.employee-leave-table tbody tr:hover{
+
+    background:#F8FBFF;
+
+}
+
+.employee-leave-type{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+}
+
+.employee-leave-type i{
+
+    width:42px;
+    height:42px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-leave-type strong{
+
+    color:#263238;
+
+}
+
+.employee-date-range{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+}
+
+.employee-date-range span{
+
+    font-weight:600;
+
+}
+
+.employee-date-range small{
+
+    color:#90A4AE;
+
+}
+
+.employee-status-badge{
+
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:7px 14px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+
+}
+
+.employee-status-badge.pending{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-status-badge.approved{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-status-badge.rejected{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-status-badge.cancelled{
+
+    background:#ECEFF1;
+    color:#607D8B;
+
+}
+
+.employee-view-btn{
+
+    width:38px;
+    height:38px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background:#E3F2FD;
+    color:#1565C0;
+    transition:.3s;
+
+}
+
+.employee-view-btn:hover{
+
+    background:#1565C0;
+    color:#ffffff;
+    transform:translateY(-3px);
+
+}
+
+.employee-leave-empty{
+
+    height:300px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.employee-leave-empty i{
+
+    font-size:55px;
+    color:#CBD5E1;
+    margin-bottom:15px;
+
+}
+
+.employee-leave-empty h3{
+
+    margin:0 0 10px;
+    color:#003DA5;
+    font-size:22px;
+    font-weight:800;
+
+}
+
+.employee-leave-empty p{
+
+    margin:0;
+    color:#78909C;
+    font-size:14px;
+
+}
+
+.employee-leave-table-wrapper::-webkit-scrollbar{
+
+    width:8px;
+    height:8px;
+
+}
+
+.employee-leave-table-wrapper::-webkit-scrollbar-track{
+
+    background:#F5F7FB;
+
+}
+
+.employee-leave-table-wrapper::-webkit-scrollbar-thumb{
+
+    background:#CFD8DC;
+    border-radius:30px;
+
+}
+
+.employee-leave-table-wrapper::-webkit-scrollbar-thumb:hover{
+
+    background:#90A4AE;
+
+}
+
+@media(max-width:1200px){
+
+.employee-leave-summary-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.employee-leave-history-header{
+
+    flex-direction:column;
+    align-items:flex-start;
+
+}
+
+.employee-new-leave-btn{
+
+    width:100%;
+    justify-content:center;
+
+}
+
+.employee-leave-search{
+
+    flex-direction:column;
+    align-items:stretch;
+
+}
+
+.employee-leave-search-box{
+
+    width:100%;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.employee-leave-summary-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.employee-leave-table-card{
+
+    padding:18px;
+
+}
+
+.employee-summary-icon{
+
+    width:60px;
+    height:60px;
+    font-size:24px;
+
+}
+
+.employee-summary-content h2{
+
+    font-size:30px;
+
+}
+
+.employee-leave-history-title h1{
+
+    font-size:26px;
+
+}
+
+}
+
+.employee-leave-actions{
+
+    display:flex;
+    gap:10px;
+
+}
+
+.employee-leave-view-btn,
+.employee-leave-pdf-btn{
+
+    border:none;
+    cursor:pointer;
+    padding:10px 16px;
+    border-radius:12px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    transition:.3s ease;
+
+}
+
+.employee-leave-view-btn{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-leave-view-btn:hover{
+
+    background:#1565C0;
+    color:#ffffff;
+    transform:translateY(-3px);
+
+}
+
+.employee-leave-pdf-btn{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-leave-pdf-btn:hover{
+
+    background:#C62828;
+    color:#ffffff;
+    transform:translateY(-3px);
+
+}
+
+@media(max-width:768px){
+
+    .employee-leave-actions{
+
+        flex-direction:column;
+
+    }
+
+    .employee-leave-view-btn,
+    .employee-leave-pdf-btn{
+
+        width:100%;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+==========================================================
+        EMPLOYEE EMPLOYMENT CONTRACTS
+==========================================================
+*/
+.employee-contract-page{
+
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+
+}
+
+.employee-contract-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin-bottom:30px;
+
+}
+
+.employee-contract-title{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.employee-contract-title h1{
+
+    margin:0;
+    color:#003DA5;
+    font-size:32px;
+    font-weight:800;
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+}
+
+.employee-contract-title h1 i{
+
+    color:#1565C0;
+    font-size:30px;
+
+}
+
+.employee-contract-title p{
+
+    margin-top:8px;
+    color:#607D8B;
+    font-size:15px;
+
+}
+
+.employee-contract-summary-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+    margin-bottom:35px;
+
+}
+
+.employee-contract-summary-card{
+
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    background:#FFFFFF;
+    padding:25px;
+    border-radius:22px;
+    border:1px solid #E8EDF5;
+    overflow:hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.06);
+
+    transition:.35s ease;
+
+}
+
+.employee-contract-summary-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.employee-contract-summary-card::before{
+
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:6px;
+    height:100%;
+
+}
+
+.employee-contract-summary-card.blue::before{
+
+    background:#1565C0;
+
+}
+
+.employee-contract-summary-card.green::before{
+
+    background:#2E7D32;
+
+}
+
+.employee-contract-summary-card.orange::before{
+
+    background:#F9A825;
+
+}
+
+.employee-contract-summary-card.purple::before{
+
+    background:#7B1FA2;
+
+}
+
+.employee-contract-summary-icon{
+
+    width:72px;
+    height:72px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-shrink:0;
+    border-radius:20px;
+    font-size:30px;
+    transition:.35s ease;
+
+}
+
+.employee-contract-summary-card.blue
+.employee-contract-summary-icon{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-contract-summary-card.green
+.employee-contract-summary-icon{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-contract-summary-card.orange
+.employee-contract-summary-icon{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-contract-summary-card.purple
+.employee-contract-summary-icon{
+
+    background:#F3E5F5;
+    color:#7B1FA2;
+
+}
+
+.employee-contract-summary-card:hover
+.employee-contract-summary-icon{
+
+    transform:
+        rotate(-8deg)
+        scale(1.1);
+
+}
+
+.employee-contract-summary-content{
+
+    flex:1;
+
+}
+
+.employee-contract-summary-content span{
+
+    display:block;
+    color:#607D8B;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:8px;
+
+}
+
+.employee-contract-summary-content h2{
+
+    margin:0;
+    color:#263238;
+    font-size:34px;
+    font-weight:800;
+
+}
+
+.employee-contract-summary-content p{
+
+    margin:8px 0 0;
+    color:#90A4AE;
+    font-size:13px;
+
+}
+
+.employee-contract-info-card{
+
+    background:#FFFFFF;
+    border:1px solid #EDF1F7;
+    border-radius:22px;
+    padding:25px;
+    margin-bottom:35px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.06);
+
+}
+
+.employee-contract-info-header{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding-bottom:20px;
+    margin-bottom:25px;
+    border-bottom:1px solid #EDF1F7;
+
+}
+
+.employee-contract-info-icon{
+
+    width:60px;
+    height:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-shrink:0;
+    border-radius:18px;
+    background:#E3F2FD;
+    color:#1565C0;
+    font-size:25px;
+
+}
+
+.employee-contract-info-header h2{
+
+    margin:0;
+    color:#263238;
+    font-size:22px;
+    font-weight:800;
+
+}
+
+.employee-contract-info-header p{
+
+    margin-top:6px;
+    color:#78909C;
+    font-size:14px;
+
+}
+
+.employee-contract-info-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+
+}
+
+.employee-contract-info-item{
+
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    min-width:0;
+
+}
+
+.employee-contract-info-item label{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#607D8B;
+    font-size:13px;
+    font-weight:700;
+
+}
+
+.employee-contract-info-item label i{
+
+    color:#1565C0;
+    font-size:13px;
+
+}
+
+.employee-contract-info-item p{
+
+    margin:0;
+    color:#263238;
+    font-size:16px;
+    font-weight:700;
+    line-height:1.5;
+    word-break:break-word;
+
+}
+
+.employee-contract-list-card{
+
+    background:#FFFFFF;
+    border-radius:22px;
+    border:1px solid #EDF1F7;
+    padding:25px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.06);
+
+}
+
+.employee-contract-list-header{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding-bottom:20px;
+    margin-bottom:20px;
+    border-bottom:1px solid #EDF1F7;
+
+}
+
+.employee-contract-list-header h2{
+
+    margin:0;
+    color:#263238;
+    font-size:22px;
+    font-weight:800;
+
+}
+
+.employee-contract-list-header p{
+
+    margin-top:6px;
+    color:#78909C;
+    font-size:14px;
+
+}
+
+.employee-contract-tools{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin:25px 0;
+
+}
+
+.employee-contract-search-box{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex:1;
+    background:#F5F7FB;
+    padding:12px 18px;
+    border-radius:14px;
+    transition:.30s ease;
+
+}
+
+.employee-contract-search-box:focus-within{
+
+    background:#FFFFFF;
+    border:1px solid #003DA5;
+
+    box-shadow:
+        0 0 0 4px rgba(0,61,165,.08);
+
+}
+
+.employee-contract-search-box i{
+
+    color:#003DA5;
+    flex-shrink:0;
+
+}
+
+.employee-contract-search-box input{
+
+    width:100%;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:#263238;
+    font-size:14px;
+
+}
+
+.employee-contract-search-box input::placeholder{
+
+    color:#90A4AE;
+
+}
+
+.employee-contract-filter-box{
+
+    width:190px;
+    flex-shrink:0;
+
+}
+
+.employee-contract-filter-box select{
+
+    width:100%;
+    height:45px;
+    padding:0 18px;
+    border-radius:12px;
+    border:1px solid #D6E0EB;
+    background:#FFFFFF;
+    color:#455A64;
+    font-size:14px;
+    font-weight:600;
+    outline:none;
+    cursor:pointer;
+    transition:.30s ease;
+
+}
+
+.employee-contract-filter-box select:hover{
+
+    border-color:#1565C0;
+
+}
+
+.employee-contract-filter-box select:focus{
+
+    border-color:#003DA5;
+
+    box-shadow:
+        0 0 0 4px rgba(0,61,165,.08);
+
+}
+
+.employee-contract-table-wrapper{
+
+    width:100%;
+    height:520px;
+    overflow:auto;
+
+}
+
+@media (max-width:1200px){
+
+    .employee-contract-summary-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .employee-contract-info-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .employee-contract-header{
+
+        flex-direction:column;
+        align-items:flex-start;
+
+    }
+
+    .employee-contract-tools{
+
+        flex-direction:column;
+        align-items:stretch;
+
+    }
+
+    .employee-contract-search-box{
+
+        width:100%;
+
+    }
+
+    .employee-contract-filter-box{
+
+        width:100%;
+
+    }
+
+    .employee-contract-summary-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .employee-contract-info-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .employee-contract-actions{
+
+        flex-direction:column;
+        align-items:stretch;
+
+    }
+
+    .employee-contract-view-btn,
+    .employee-contract-download-btn{
+
+        width:100%;
+        justify-content:center;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .employee-contract-info-card,
+    .employee-contract-list-card{
+
+        padding:18px;
+
+    }
+
+    .employee-contract-title h1{
+
+        font-size:26px;
+
+    }
+
+    .employee-contract-summary-icon{
+
+        width:60px;
+        height:60px;
+        font-size:24px;
+
+    }
+
+    .employee-contract-summary-content h2{
+
+        font-size:30px;
+
+    }
+
+}
+
+.employee-contract-table-wrapper{
+
+    width:100%;
+    height:520px;
+    overflow:auto;
+
+}
+
+.employee-contract-table{
+
+    width:100%;
+    min-width:1100px;
+    border-collapse:collapse;
+
+}
+
+.employee-contract-table thead{
+
+    position:sticky;
+    top:0;
+    z-index:5;
+
+}
+
+.employee-contract-table th{
+
+    padding:16px;
+    background:#F5F7FB;
+    color:#003DA5;
+    font-size:13px;
+    font-weight:700;
+    text-align:left;
+
+}
+
+.employee-contract-table td{
+
+    padding:16px;
+    border-bottom:1px solid #EDF1F7;
+    color:#455A64;
+    font-size:14px;
+    vertical-align:middle;
+
+}
+
+.employee-contract-table tbody tr{
+
+    transition:.30s ease;
+
+}
+
+.employee-contract-table tbody tr:hover{
+
+    background:#F8FBFF;
+
+}
+
+.employee-contract-status{
+
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:7px 14px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+    white-space:nowrap;
+
+}
+
+.employee-contract-status.active{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-contract-status.expired{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-contract-actions{
+
+    display:flex;
+    gap:10px;
+
+}
+
+.employee-contract-actions form{
+
+    margin:0;
+
+}
+
+.employee-contract-view-btn,
+.employee-contract-download-btn{
+
+    border:none;
+    cursor:pointer;
+    padding:10px 16px;
+    border-radius:12px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    transition:.30s ease;
+
+}
+
+.employee-contract-view-btn{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-contract-view-btn:hover{
+
+    background:#1565C0;
+    color:#FFFFFF;
+    transform:translateY(-3px);
+
+}
+
+.employee-contract-download-btn{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-contract-download-btn:hover{
+
+    background:#C62828;
+    color:#FFFFFF;
+    transform:translateY(-3px);
+
+}
+
+.employee-contract-empty{
+
+    width:100%;
+    min-height:320px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+
+}
+
+.employee-contract-empty i{
+
+    font-size:62px;
+    color:#C8D3DF;
+    margin-bottom:18px;
+
+}
+
+.employee-contract-empty h3{
+
+    margin:0 0 12px;
+    color:#003DA5;
+    font-size:22px;
+    font-weight:800;
+
+}
+
+.employee-contract-empty p{
+
+    margin:0;
+    color:#78909C;
+    font-size:15px;
+    line-height:1.6;
+
+}
+
+.employee-contract-table-wrapper::-webkit-scrollbar{
+
+    width:8px;
+    height:8px;
+
+}
+
+.employee-contract-table-wrapper::-webkit-scrollbar-track{
+
+    background:#F5F7FB;
+
+}
+
+.employee-contract-table-wrapper::-webkit-scrollbar-thumb{
+
+    background:#CFD8DC;
+    border-radius:30px;
+
+}
+
+.employee-contract-table-wrapper::-webkit-scrollbar-thumb:hover{
+
+    background:#90A4AE;
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+==========================================================
+            EMPLOYEE RESIGNATION REQUEST
+==========================================================
+*/
+.employee-resignation-request-page{
+
+    width:100%;
+
+}
+
+.employee-resignation-request-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+    border-left:6px solid #0D47A1;
+
+}
+
+.employee-resignation-request-title h1{
+
+    margin:0;
+    font-size:30px;
+    font-weight:800;
+    color:#0D47A1;
+
+}
+
+.employee-resignation-request-title h1 i{
+
+    color:#FFC107;
+    margin-right:10px;
+
+}
+
+.employee-resignation-request-title p{
+
+    margin-top:10px;
+    color:#607D8B;
+    font-size:14px;
+
+}
+
+.employee-resignation-request-history-btn{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#0D47A1;
+    color:white;
+    padding:13px 22px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+
+}
+
+.employee-resignation-request-history-btn:hover{
+
+    background:#08306B;
+
+    transform:
+    translateY(-2px);
+
+}
+
+.employee-resignation-card{
+
+    background:white;
+    border-radius:22px;
+    padding:30px;
+    margin-bottom:25px;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.06);
+
+    border:1px solid #E8EDF5;
+
+}
+
+.employee-resignation-card-header{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding-bottom:20px;
+    margin-bottom:25px;
+    border-bottom:1px solid #EDF1F7;
+
+}
+
+.employee-resignation-card-icon{
+
+    width:50px;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#E3F2FD;
+    color:#0D47A1;
+    border-radius:15px;
+    font-size:22px;
+
+}
+
+.employee-resignation-card-header h2{
+
+    margin:0;
+    color:#263238;
+    font-size:21px;
+    font-weight:800;
+
+}
+
+.employee-resignation-card-header p{
+
+    margin:5px 0 0;
+    color:#78909C;
+    font-size:13px;
+
+}
+
+.employee-resignation-info-grid{
+
+    display:grid;
+    grid-template-columns:
+    repeat(2,1fr);
+    gap:20px;
+
+}
+
+.employee-resignation-info-item{
+
+    background:#F8FAFC;
+    padding:18px;
+    border-radius:15px;
+    border:1px solid #E9EEF5;
+
+}
+
+.employee-resignation-info-item label{
+
+    display:block;
+    color:#607D8B;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:8px;
+
+}
+
+.employee-resignation-info-item label i{
+
+    color:#0D47A1;
+    margin-right:8px;
+
+}
+
+.employee-resignation-info-item p{
+
+    margin:0;
+    font-size:16px;
+    font-weight:800;
+    color:#263238;
+
+}
+
+.employee-resignation-form-grid{
+
+    display:grid;
+    grid-template-columns:
+    repeat(2,1fr);
+    gap:25px;
+
+}
+
+.employee-resignation-form-group{
+
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+
+}
+
+.employee-resignation-form-group label{
+
+    font-size:14px;
+    font-weight:700;
+    color:#37474F;
+
+}
+
+.employee-resignation-form-group label i{
+
+    color:#0D47A1;
+    margin-right:8px;
+
+}
+
+.employee-resignation-form-group label span{
+
+    color:#D32F2F;
+
+}
+
+.employee-resignation-form-group input,
+.employee-resignation-form-group textarea{
+
+    width:100%;
+    padding:14px 16px;
+    border-radius:12px;
+    border:1px solid #D7DEE8;
+    background:#FAFBFD;
+    font-size:14px;
+    outline:none;
+    transition:.3s;
+
+}
+
+.employee-resignation-form-group textarea{
+
+    resize:none;
+
+}
+
+.employee-resignation-form-group input:focus,
+.employee-resignation-form-group textarea:focus{
+
+    border-color:#0D47A1;
+    background:white;
+
+    box-shadow:
+    0 0 0 4px rgba(13,71,161,.12);
+
+}
+
+.employee-resignation-full-width{
+
+    width:100%;
+
+}
+
+.employee-resignation-error{
+
+    display:block;
+    min-height:18px;
+    color:#D32F2F;
+    font-size:12px;
+    font-weight:600;
+
+}
+
+.input-error{
+
+    border:
+    2px solid #E53935!important;
+
+    background:#FFF5F5!important;
+
+}
+
+.employee-resignation-counter{
+
+    text-align:right;
+    margin-top:8px;
+    font-size:12px;
+    color:#78909C;
+
+}
+
+.employee-resignation-counter span{
+
+    font-weight:800;
+    color:#0D47A1;
+
+}
+
+.employee-resignation-guidelines{
+
+    display:flex;
+    gap:20px;
+    padding:25px;
+    background:#FFF8E1;
+    border-left:6px solid #FFC107;
+    border-radius:18px;
+    margin-bottom:30px;
+
+}
+
+.employee-resignation-guidelines-icon{
+
+    width:45px;
+    height:45px;
+    background:#FFC107;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+
+}
+
+.employee-resignation-guidelines h4{
+
+    margin:0 0 10px;
+    color:#5D4037;
+    font-size:18px;
+
+}
+
+.employee-resignation-guidelines ul{
+
+    margin:0;
+    padding-left:20px;
+
+}
+
+.employee-resignation-guidelines li{
+
+    margin-bottom:8px;
+    color:#6D4C41;
+    font-size:14px;
+
+}
+
+.employee-resignation-history-btn{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#0D47A1;
+    color:white;
+    padding:13px 22px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+
+}
+
+.employee-resignation-history-btn:hover{
+
+    background:#08306B;
+    transform:translateY(-2px);
+
+}
+
+.employee-resignation-action-buttons{
+
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+    margin-top:25px;
+
+}
+
+.employee-resignation-reset-btn,
+.employee-resignation-submit-btn{
+
+    padding:14px 25px;
+    border:none;
+    border-radius:14px;
+    font-weight:800;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    transition:.3s;
+
+}
+
+.employee-resignation-reset-btn{
+
+    background:#FFB300;
+    color:#263238;
+
+}
+
+.employee-resignation-reset-btn:hover{
+
+    background:#FFC107;
+
+}
+
+.employee-resignation-submit-btn{
+
+    background:#0D47A1;
+    color:white;
+
+}
+
+.employee-resignation-submit-btn:hover{
+
+    background:#08306B;
+    transform:
+    translateY(-2px);
+
+}
+
+@media(max-width:900px){
+
+    .employee-resignation-request-header{
+
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+
+    }
+
+    .employee-resignation-form-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .employee-resignation-info-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .employee-resignation-action-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .employee-resignation-submit-btn,
+    .employee-resignation-reset-btn{
+
+        width:100%;
+        justify-content:center;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .employee-resignation-request-page{
+
+        padding:15px;
+
+    }
+
+    .employee-resignation-request-header{
+
+        padding:20px;
+        border-radius:16px;
+
+    }
+
+    .employee-resignation-request-title h1{
+
+        font-size:24px;
+
+    }
+
+    .employee-resignation-request-history-btn{
+
+        width:100%;
+        justify-content:center;
+
+    }
+
+    .employee-resignation-card{
+
+        padding:20px;
+        border-radius:18px;
+
+    }
+
+    .employee-resignation-card-header{
+
+        align-items:flex-start;
+
+    }
+
+    .employee-resignation-card-header h2{
+
+        font-size:18px;
+
+    }
+
+    .employee-resignation-card-icon{
+
+        width:45px;
+        height:45px;
+        font-size:18px;
+
+    }
+
+    .employee-resignation-info-item p{
+
+        font-size:14px;
+
+    }
+
+    .employee-resignation-form-group input,
+    .employee-resignation-form-group textarea{
+
+        padding:12px 14px;
+        font-size:13px;
+
+    }
+
+    .employee-resignation-guidelines{
+
+        flex-direction:column;
+        padding:20px;
+
+    }
+
+    .employee-resignation-guidelines h4{
+
+        font-size:16px;
+
+    }
+
+    .employee-resignation-guidelines li{
+
+        font-size:13px;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+==========================================================
+            EMPLOYEE RESIGNATION HISTORY
+==========================================================
+*/
+.employee-resignation-history-page{
+
+    width:100%;
+
+}
+
+.employee-resignation-history-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin-bottom:30px;
+
+}
+
+.employee-resignation-history-title h1{
+
+    margin:0;
+    color:#003DA5;
+    font-size:32px;
+    font-weight:800;
+
+}
+
+.employee-resignation-history-title h1 i{
+
+    margin-right:10px;
+
+}
+
+.employee-resignation-history-title p{
+
+    margin-top:8px;
+    color:#607D8B;
+    font-size:15px;
+
+}
+
+.employee-new-resignation-btn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:#003DA5;
+    color:#ffffff;
+    padding:12px 20px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s ease;
+
+}
+
+.employee-new-resignation-btn:hover{
+
+    background:#0D47A1;
+    transform:translateY(-2px);
+
+}
+
+.employee-resignation-summary-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+    margin-bottom:35px;
+
+}
+
+.employee-resignation-summary-card{
+
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    background:#ffffff;
+    padding:25px;
+    border-radius:22px;
+    border:1px solid #E8EDF5;
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+    transition:.35s ease;
+
+}
+
+.employee-resignation-summary-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.employee-resignation-summary-card::before{
+
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:6px;
+    height:100%;
+
+}
+
+.employee-resignation-summary-card.blue::before{
+
+    background:#1565C0;
+
+}
+
+.employee-resignation-summary-card.orange::before{
+
+    background:#F9A825;
+
+}
+
+.employee-resignation-summary-card.green::before{
+
+    background:#2E7D32;
+
+}
+
+.employee-resignation-summary-card.red::before{
+
+    background:#C62828;
+
+}
+
+.employee-resignation-summary-icon{
+
+    width:72px;
+    height:72px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-shrink:0;
+    border-radius:20px;
+    font-size:30px;
+    transition:.35s ease;
+
+}
+
+.employee-resignation-summary-card.blue 
+.employee-resignation-summary-icon{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-resignation-summary-card.orange 
+.employee-resignation-summary-icon{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-resignation-summary-card.green 
+.employee-resignation-summary-icon{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-resignation-summary-card.red 
+.employee-resignation-summary-icon{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-resignation-summary-card:hover 
+.employee-resignation-summary-icon{
+
+    transform:
+    rotate(-8deg)
+    scale(1.1);
+
+}
+
+.employee-resignation-summary-content{
+
+    flex:1;
+
+}
+
+.employee-resignation-summary-content span{
+
+    display:block;
+    color:#607D8B;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:8px;
+
+}
+
+.employee-resignation-summary-content h2{
+
+    margin:0;
+    color:#263238;
+    font-size:34px;
+    font-weight:800;
+
+}
+
+.employee-resignation-summary-content p{
+
+    margin:8px 0 0;
+    color:#90A4AE;
+    font-size:13px;
+
+}
+
+.employee-resignation-table-card{
+
+    background:#ffffff;
+    border-radius:22px;
+    border:1px solid #EDF1F7;
+    padding:25px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+}
+
+.employee-resignation-table-title h2{
+
+    margin:0;
+    color:#003DA5;
+    font-size:26px;
+    font-weight:800;
+
+}
+
+.employee-resignation-table-title h2 i{
+
+    margin-right:10px;
+
+}
+
+.employee-resignation-table-title p{
+
+    margin-top:8px;
+    color:#607D8B;
+    font-size:15px;
+
+}
+
+.employee-resignation-search{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin:25px 0;
+
+}
+
+.employee-resignation-search-box{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+    width:400px;
+    background:#F5F7FB;
+    padding:12px 18px;
+    border-radius:14px;
+    transition:.3s ease;
+
+}
+
+.employee-resignation-search-box:focus-within{
+
+    background:#ffffff;
+    border:1px solid #003DA5;
+
+    box-shadow:
+    0 0 0 4px rgba(0,61,165,.08);
+
+}
+
+.employee-resignation-search-box i{
+
+    color:#003DA5;
+
+}
+
+.employee-resignation-search-box input{
+
+    width:100%;
+    border:none;
+    outline:none;
+    background:none;
+    font-size:14px;
+
+}
+
+.employee-resignation-filter-box select{
+
+    height:45px;
+    padding:0 18px;
+    border-radius:12px;
+    border:1px solid #D6E0EB;
+    background:#ffffff;
+    color:#455A64;
+    font-weight:600;
+    cursor:pointer;
+
+}
+
+.employee-resignation-table-wrapper{
+
+    width:100%;
+    height:520px;
+    overflow:auto;
+
+}
+
+.employee-resignation-table{
+
+    width:100%;
+    min-width:1100px;
+    border-collapse:collapse;
+
+}
+
+.employee-resignation-table thead{
+
+    position:sticky;
+    top:0;
+    z-index:5;
+
+}
+
+.employee-resignation-table th{
+
+    padding:16px;
+    background:#F5F7FB;
+    color:#003DA5;
+    font-size:13px;
+    font-weight:700;
+    text-align:left;
+
+}
+
+.employee-resignation-table td{
+
+    padding:16px;
+    border-bottom:1px solid #EDF1F7;
+    color:#455A64;
+    font-size:14px;
+
+}
+
+.employee-resignation-table tbody tr:hover{
+
+    background:#F8FBFF;
+
+}
+
+.employee-resignation-reason{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+    max-width:280px;
+
+}
+
+.employee-resignation-reason i{
+
+    width:42px;
+    height:42px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background:#E3F2FD;
+    color:#1565C0;
+    flex-shrink:0;
+
+}
+
+.employee-resignation-reason span{
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-weight:600;
+    color:#263238;
+
+}
+
+.employee-resignation-status{
+
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:7px 15px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+
+}
+
+.employee-resignation-status.pending{
+
+    background:#FFF8E1;
+    color:#F9A825;
+
+}
+
+.employee-resignation-status.approved{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-resignation-status.rejected{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-resignation-view-btn{
+
+    border:none;
+    cursor:pointer;
+    padding:10px 18px;
+    border-radius:12px;
+    background:#E3F2FD;
+    color:#1565C0;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    transition:.3s ease;
+
+}
+
+.employee-resignation-view-btn:hover{
+
+    background:#1565C0;
+    color:#ffffff;
+    transform:translateY(-3px);
+
+}
+
+.employee-resignation-empty{
+
+    height:300px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.employee-resignation-empty i{
+
+    font-size:55px;
+    color:#CBD5E1;
+    margin-bottom:15px;
+
+}
+
+.employee-resignation-empty h3{
+
+    margin:0 0 10px;
+    color:#003DA5;
+    font-size:22px;
+    font-weight:800;
+
+}
+
+.employee-resignation-empty p{
+
+    margin:0;
+    color:#78909C;
+    font-size:14px;
+
+}
+
+.employee-resignation-table-wrapper::-webkit-scrollbar{
+
+    width:8px;
+    height:8px;
+
+}
+
+.employee-resignation-table-wrapper::-webkit-scrollbar-track{
+
+    background:#F5F7FB;
+
+}
+
+.employee-resignation-table-wrapper::-webkit-scrollbar-thumb{
+
+    background:#CFD8DC;
+    border-radius:30px;
+
+}
+
+.employee-resignation-table-wrapper::-webkit-scrollbar-thumb:hover{
+
+    background:#90A4AE;
+
+}
+
+@media(max-width:1200px){
+
+    .employee-resignation-summary-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .employee-resignation-history-header{
+
+        flex-direction:column;
+        align-items:flex-start;
+
+    }
+
+    .employee-new-resignation-btn{
+
+        width:100%;
+        justify-content:center;
+
+    }
+
+    .employee-resignation-search{
+
+        flex-direction:column;
+        align-items:stretch;
+
+    }
+
+    .employee-resignation-search-box{
+
+        width:100%;
+
+    }
+
+    .employee-resignation-filter-box select{
+
+        width:100%;
+
+    }
+
+    .employee-resignation-summary-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .employee-resignation-table-card{
+
+        padding:18px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .employee-resignation-summary-icon{
+
+        width:60px;
+        height:60px;
+        font-size:24px;
+
+    }
+
+    .employee-resignation-summary-content h2{
+
+        font-size:30px;
+
+    }
+
+    .employee-resignation-history-title h1{
+
+        font-size:26px;
+
+    }
+
+    .employee-resignation-table-title h2{
+
+        font-size:22px;
+
+    }
+
+    .employee-resignation-reason{
+
+        max-width:200px;
+
+    }
+
+    .employee-resignation-view-btn{
+
+        width:100%;
+
+    }
+
+}
+
+.employee-resignation-actions{
+
+    display:flex;
+    gap:10px;
+
+}
+
+.employee-resignation-view-btn,
+.employee-resignation-pdf-btn{
+
+    border:none;
+    cursor:pointer;
+    padding:10px 16px;
+    border-radius:12px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    transition:.3s ease;
+
+}
+
+.employee-resignation-view-btn{
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+
+.employee-resignation-view-btn:hover{
+
+    background:#1565C0;
+    color:#ffffff;
+    transform:translateY(-3px);
+
+}
+
+.employee-resignation-pdf-btn{
+
+    background:#FDECEC;
+    color:#C62828;
+
+}
+
+.employee-resignation-pdf-btn:hover{
+
+    background:#C62828;
+    color:#ffffff;
+    transform:translateY(-3px);
+
+}
+
+@media(max-width:768px){
+
+    .employee-resignation-actions{
+
+        flex-direction:column;
+
+    }
+
+    .employee-resignation-view-btn,
+    .employee-resignation-pdf-btn{
+
+        width:100%;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/*
+==========================================================
+                EMPLOYEE PROFILE PAGE
+==========================================================
+*/
+.employee-profile-page{
+
+    width:100%;
+
+}
+
+.employee-profile-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+
+}
+
+.employee-profile-title h1{
+
+    font-size:28px;
+    color:#0D47A1;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:0 0 8px;
+
+}
+
+.employee-profile-title h1 i{
+
+    color:#FFC107;
+
+}
+
+.employee-profile-title p{
+
+    color:#64748B;
+    margin:0;
+    font-size:14px;
+
+}
+
+.employee-profile-card{
+
+    background:#ffffff;
+    border-radius:18px;
+    padding:30px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,0.08);
+
+}
+
+.employee-profile-top{
+
+    display:flex;
+    align-items:center;
+    gap:30px;
+    padding-bottom:25px;
+    border-bottom:1px solid #E5E7EB;
+
+}
+
+.employee-profile-avatar{
+
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    overflow:hidden;
+    border:5px solid #FFC107;
+    background:#F5F7FA;
+    flex-shrink:0;
+
+}
+
+.employee-profile-image{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+.employee-profile-info h2{
+
+    margin:0 0 10px;
+    color:#263238;
+    font-size:26px;
+
+}
+
+.employee-profile-email{
+
+    color:#64748B;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:15px;
+
+}
+
+.employee-profile-email i{
+
+    color:#0D47A1;
+
+}
+
+.employee-profile-badges{
+
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+
+}
+
+.employee-role-badge,
+.employee-status-badge{
+
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:8px 15px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+
+}
+
+.employee-role-badge{
+
+    background:#E3F2FD;
+    color:#0D47A1;
+
+}
+
+.employee-status-badge{
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+
+.employee-status-badge.inactive{
+
+    background:#FFEBEE;
+    color:#C62828;
+
+}
+
+.employee-profile-actions{
+
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+    margin:25px 0;
+    flex-wrap:wrap;
+
+}
+
+.employee-profile-btn{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 22px;
+    border-radius:10px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+.employee-profile-btn.edit{
+
+    background:#FFC107;
+    color:#263238;
+
+}
+
+.employee-profile-btn.password{
+
+    background:#0D47A1;
+    color:white;
+
+}
+
+.employee-profile-btn:hover{
+
+    transform:translateY(-2px);
+    opacity:.9;
+
+}
+
+.employee-profile-section-header{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin:35px 0 20px;
+    padding-bottom:15px;
+    border-bottom:2px solid #E5E7EB;
+
+}
+
+.employee-profile-section-icon{
+
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background:#0D47A1;
+    color:white;
+    font-size:18px;
+
+}
+
+.employee-profile-section-header h2{
+
+    margin:0;
+    color:#263238;
+    font-size:20px;
+
+}
+
+.employee-profile-section-header p{
+
+    margin:4px 0 0;
+    color:#64748B;
+    font-size:13px;
+
+}
+
+.employee-profile-grid{
+
+    display:grid;
+    grid-template-columns:
+    repeat(2,1fr);
+    gap:20px;
+
+}
+
+.employee-profile-group{
+
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+
+}
+
+.employee-profile-group label{
+
+    font-size:14px;
+    font-weight:600;
+    color:#374151;
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+}
+
+.employee-profile-group label i{
+
+    color:#0D47A1;
+
+}
+
+.employee-profile-group input,
+.employee-profile-group textarea{
+
+    width:100%;
+    padding:13px 15px;
+    border-radius:10px;
+    border:1px solid #D1D5DB;
+    background:#F8FAFC;
+    color:#374151;
+    font-size:14px;
+    outline:none;
+
+}
+
+.employee-profile-group textarea{
+
+    min-height:100px;
+    resize:none;
+
+}
+
+.employee-profile-full{
+
+    grid-column:1 / -1;
+
+}
+
+.employee-profile-group input[value*="₱"]{
+
+    font-weight:700;
+    color:#0D47A1;
+
+}
+
+@media(max-width:900px){
+
+    .employee-profile-top{
+
+        flex-direction:column;
+        text-align:center;
+
+    }
+
+    .employee-profile-badges{
+
+        justify-content:center;
+
+    }
+
+    .employee-profile-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .employee-profile-actions{
+
+        justify-content:center;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .employee-profile-card{
+
+        padding:20px;
+
+    }
+
+    .employee-profile-avatar{
+
+        width:110px;
+        height:110px;
+
+    }
+
+    .employee-profile-info h2{
+
+        font-size:22px;
+
+    }
+
+}

@@ -1,0 +1,504 @@
+.hr-pay-crud-page{
+
+    width:100%;
+
+}
+
+.hr-pay-crud-header{
+
+    background:#ffffff;
+    padding:28px 35px;
+    border-radius:22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+}
+
+.hr-pay-crud-title h1{
+
+    margin:0;
+    color:#003DA5;
+    font-size:32px;
+    font-weight:800;
+
+}
+
+.hr-pay-crud-title h1 i{
+
+    margin-right:12px;
+
+}
+
+.hr-pay-crud-title p{
+
+    margin-top:8px;
+    color:#607D8B;
+    font-size:15px;
+
+}
+
+.hr-pay-crud-header-actions{
+
+    display:flex;
+
+}
+
+.hr-pay-crud-back-btn{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:13px 25px;
+    background:#F4A900;
+    color:white;
+    text-decoration:none;
+    border-radius:12px;
+    font-weight:700;
+    transition:.3s;
+
+}
+
+.hr-pay-crud-back-btn:hover{
+
+    background:#d99000;
+    transform:translateY(-2px);
+
+}
+
+.hr-pay-crud-card{
+
+    background:white;
+    border-radius:22px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+}
+
+.hr-pay-crud-card-header{
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding-bottom:25px;
+    margin-bottom:25px;
+    border-bottom:1px solid #EDF1F7;
+
+}
+
+.hr-pay-crud-icon{
+
+    width:65px;
+    height:65px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:18px;
+    background:#0052CC;
+    color:white;
+    font-size:28px;
+
+}
+
+.hr-pay-crud-card-header h2{
+
+    margin:0;
+    font-size:22px;
+    font-weight:800;
+    color:#263238;
+
+}
+
+.hr-pay-crud-card-header p{
+
+    margin:7px 0 0;
+    color:#78909C;
+
+}
+
+.hr-pay-crud-form-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px 22px;
+
+}
+
+.hr-pay-crud-form-group{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.hr-pay-crud-form-group label{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:10px;
+    color:#17324D;
+    font-weight:700;
+    font-size:14px;
+
+}
+
+.hr-pay-crud-form-group label i{
+
+    color:#003DA5;
+
+}
+
+.hr-pay-crud-form-group input,
+.hr-pay-crud-form-group select{
+
+    height:45px;
+    width:100%;
+    border-radius:12px;
+    border:1px solid #D7DFEA;
+    padding:0 15px;
+    font-size:14px;
+    outline:none;
+
+}
+
+.hr-pay-crud-form-group input:focus,
+.hr-pay-crud-form-group select:focus{
+
+    border-color:#003DA5;
+    box-shadow:0 0 0 4px rgba(0,61,165,.10);
+
+}
+
+.hr-pay-crud-input-icon{
+
+    height:45px;
+    display:flex;
+    align-items:center;
+    border:1px solid #D7DFEA;
+    border-radius:12px;
+    overflow:hidden;
+
+}
+
+.hr-pay-crud-input-icon span{
+
+    width:45px;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#F5F8FC;
+    color:#003DA5;
+    font-weight:800;
+
+}
+
+.hr-pay-crud-input-icon input{
+
+    border:none!important;
+    height:100%!important;
+
+}
+
+.hr-pay-readonly,
+.hr-pay-crud-input-icon input[readonly]{
+
+    background:#F5F7FA!important;
+    color:#607D8B!important;
+    cursor:not-allowed;
+    font-weight:700;
+
+}
+
+#grossPay{
+
+    color:#2E7D32;
+    font-weight:800;
+
+}
+
+#netPay{
+
+    color:#003DA5;
+    font-weight:900;
+
+}
+
+.hr-pay-crud-actions{
+
+    grid-column:1/-1;
+    margin-top:35px;
+    display:flex;
+    justify-content:flex-end;
+
+}
+
+.hr-pay-crud-submit-btn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:13px 32px;
+    border:none;
+    border-radius:12px;
+    background:#003DA5;
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+
+}
+
+.hr-pay-crud-submit-btn:hover{
+
+    background:#002B73;
+
+}
+
+.crud-section-title{
+
+    margin-top:35px;
+    margin-bottom:20px;
+    padding-bottom:12px;
+    border-bottom:1px solid #EDF1F7;
+
+}
+
+.crud-section-title h3{
+
+    margin:0;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#003DA5;
+    font-size:18px;
+    font-weight:800;
+
+}
+
+.crud-info{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+
+}
+
+.crud-info-box{
+
+    background:#F8FAFD;
+    border:1px solid #E5EBF3;
+    border-radius:14px;
+    padding:18px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+
+}
+
+.crud-info-box span{
+
+    color:#78909C;
+    font-size:13px;
+    font-weight:700;
+
+}
+
+.crud-info-box strong{
+
+    color:#263238;
+    font-size:15px;
+    font-weight:800;
+
+}
+
+.payroll-status{
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 15px;
+    border-radius:20px;
+    width:max-content;
+    font-size:13px;
+    font-weight:800;
+
+}
+
+.payroll-status.draft{
+
+    background:#FFF3CD;
+    color:#856404;
+
+}
+
+.payroll-status.generated{
+
+    background:#D4EDDA;
+    color:#155724;
+
+}
+
+.payroll-status.paid{
+
+    background:#D1ECF1;
+    color:#0C5460;
+
+}
+
+.payroll-view-actions{
+
+    width:100%;
+    display:flex;
+    justify-content:flex-end;
+    margin-top:35px;
+
+}
+
+.payroll-view-actions form{
+
+    width:auto;
+    margin:0;
+    display:block;
+
+}
+
+.payroll-view-actions button{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:13px 30px;
+    border:none;
+    border-radius:12px;
+    background:#003DA5;
+    color:white;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+
+}
+
+.payroll-view-actions button:hover{
+
+    background:#002B73;
+    transform:translateY(-2px);
+
+}
+
+.payroll-view-actions{
+
+    margin-top:35px;
+    width:100%;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:15px;
+
+}
+
+.payroll-view-actions form{
+
+    margin:0;
+
+}
+
+.payroll-action-btn{
+
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:13px 28px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.payroll-edit-btn{
+
+    background:#003DA5;
+
+}
+
+.payroll-edit-btn:hover{
+
+    background:#002B73;
+    transform:translateY(-2px);
+
+}
+
+.payroll-download-btn{
+
+    background:#F4A900;
+
+}
+
+.payroll-download-btn:hover{
+
+    background:#D99000;
+    transform:translateY(-2px);
+
+}
+
+@media(max-width:700px){
+
+    .payroll-view-actions{
+
+        flex-direction:column;
+        align-items:stretch;
+
+    }
+
+    .payroll-action-btn{
+
+        width:100%;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .hr-pay-crud-form-grid,
+    .crud-info{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hr-pay-crud-header{
+
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .hr-pay-crud-card{
+
+        padding:22px;
+
+    }
+
+    .hr-pay-crud-title h1{
+
+        font-size:26px;
+
+    }
+
+}
